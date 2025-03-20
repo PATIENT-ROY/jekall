@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+});
 // Обновление текущего года в футере
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -121,7 +122,6 @@ if (trailerContainer && totalSlides > 0) {
 }
 
 // График работы
-
 const openingHours = [
     { day: "Воскресенье", hours: "закрыто", open: false }, // 0
     { day: "Понедельник", hours: "08:00-17:00", open: true, start: 8, end: 17 }, // 1
@@ -132,29 +132,27 @@ const openingHours = [
     { day: "Суббота", hours: "09:00-16:30", open: true, start: 9, end: 16.5 }, // 6
 ];
 
-function getTodayHours() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-    const todayHours = openingHours[dayOfWeek];
-    const todayHoursElement = document.getElementById('today-hours');
+// Функция для обновления текущего времени
+function updateCurrentTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const currentTimeElement = document.getElementById('current-time');
 
-    if (todayHoursElement && todayHours) {
-        todayHoursElement.textContent = `Сегодня ${todayHours.hours}`;
+    if (currentTimeElement) {
+        currentTimeElement.textContent = `${hours}:${minutes}`;
     } else {
-        console.error("Элемент #today-hours не найден или данные о часах работы отсутствуют.");
+        console.error("Элемент #current-time не найден.");
     }
 }
 
+// Функция для обновления статуса
 function getTodayStatus() {
     const today = new Date();
     const currentHour = today.getHours();
     const currentMinutes = today.getMinutes();
     const statusElement = document.getElementById('status');
     const todayHours = openingHours[today.getDay()];
-
-    console.log("Текущий день:", today.getDay()); // День недели (0-6)
-    console.log("Текущее время:", currentHour, currentMinutes); // Текущие часы и минуты
-    console.log("Часы работы:", todayHours); // Данные о часах работы
 
     if (statusElement && todayHours) {
         if (todayHours.open) {
@@ -171,23 +169,25 @@ function getTodayStatus() {
     }
 }
 
-function updateCurrentTime() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const currentTimeElement = document.getElementById('current-time');
+// Функция для обновления часов работы
+function getTodayHours() {
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const todayHours = openingHours[dayOfWeek];
+    const todayScheduleElement = document.getElementById('today-schedule');
 
-    if (currentTimeElement) {
-        currentTimeElement.textContent = `${hours}:${minutes}`;
+    if (todayScheduleElement && todayHours) {
+        todayScheduleElement.textContent = todayHours.hours;
     } else {
-        console.error("Элемент #current-time не найден.");
+        console.error("Элемент #today-schedule не найден или данные о часах работы отсутствуют.");
     }
 }
 
+// Функция для обновления всего
 function updateAll() {
-    getTodayHours();
-    getTodayStatus();
     updateCurrentTime();
+    getTodayStatus();
+    getTodayHours();
 }
 
 // Обновляем время и статус каждую минуту
@@ -195,4 +195,3 @@ setInterval(updateAll, 60000);
 
 // Вызываем функции при загрузке страницы
 document.addEventListener('DOMContentLoaded', updateAll);
-});

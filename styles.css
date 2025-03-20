@@ -572,20 +572,25 @@ footer p {
 
 .social-links a:hover {
     transform: translateY(-5px); /* Поднимаем иконку при наведении */
-}  #today-hours {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
 }
-
-#current-time {
-    color: #25D366; /* Зеленый цвет для времени */
-}
-
-#status {
-    margin-left: 10px;
-    font-weight: bold;
-}
+    #today-hours {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+    #current-time {
+        color: #25D366; /* Зеленый цвет для времени */
+    }
+    
+    #status {
+        margin-left: 10px;
+        font-weight: bold;
+    }
+    
+    #today-schedule {
+        margin-left: 10px;
+        color: #666; /* Серый цвет для графика работы */
+    }
 
 .hidden {
     display: none;
