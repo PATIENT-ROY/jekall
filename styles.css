@@ -4,9 +4,14 @@
     --background-color: #f9f9f9;
     --text-color: #333;
 }
-
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .search button {
@@ -17,15 +22,7 @@ body {
     background-color: var(--hover-color);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+
 
 main {
     flex: 1;
@@ -69,6 +66,7 @@ main {
 .logo img {
     width: 65px;
     height: 50px;
+    border-radius: 25px;
 }
 
 .catalog {
@@ -135,7 +133,6 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
-
 .product {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -151,14 +148,13 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     border: 2px solid transparent;
 }
-
 .product:hover {
     transform: translateY(-5px) scale(1.02); /* Поднимаем и увеличиваем */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
     background-color: #f9f9f9; /* Светлый фон */
     border-color: #25D366; /* Зеленая граница */
 }
-.product img {
+.product-card__image{
     max-width: 100%;
     height: auto;
     border-radius: 5px;
@@ -176,17 +172,17 @@ main {
     object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило контейнер */
     transition: opacity 0.3s ease; /* Плавное переключение */
 }
-.product h2 {
+.product-card__title {
     font-size: 1.5em;
     margin: 10px 0;
 }
 
-.product p {
+.product-card__price {
     font-size: 1.2em;
     color: #333;
 }
 
-.product a {
+.product-card__button{
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -196,9 +192,25 @@ main {
     border-radius: 5px;
 }
 
-.product a:hover {
+.product-card__button:hover {
     background-color: #128C7E;
 }
+
+/* Добавляем только этот медиазапрос в конец файла */
+@media (max-width: 768px) {
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    
+    .product {
+      width: auto;
+      margin: 0;
+    }
+  }
+
 
 footer {
     background-color: #333;
@@ -522,7 +534,6 @@ footer {
 @media (max-width: 768px) {
     .filters-container {
         gap: 8px;
-        margin-top: 120px;
     }
 
     .filter-button {
@@ -591,6 +602,11 @@ footer p {
         margin-left: 10px;
         color: #666; /* Серый цвет для графика работы */
     }
+    @media (max-width: 768px) {
+        #today-schedule {
+            margin-left: 1px;
+        }
+    }
 
 .hidden {
     display: none;
@@ -606,7 +622,7 @@ footer p {
     text-align: center;
     padding: 20px;}
  
-  .header-container h1 {
+  .header-container_title{
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 20px;
@@ -632,13 +648,14 @@ footer p {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
+    border-radius: 20px;
   }
 
   .title-contaire {
     margin-top: 40px;
   }
   
-  .title-contaire h2 {
+  .title-contaire_category {
     font-size: 1.2rem;
     color: #333;
   }
