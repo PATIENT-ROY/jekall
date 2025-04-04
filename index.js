@@ -84,13 +84,56 @@ document.querySelectorAll('.menu a').forEach(link => {
     });
 });
 
-// Фильтры
+// // Фильтры
 document.querySelectorAll('.filter-button').forEach(button => {
     button.addEventListener('click', () => {
         const filterValue = button.getAttribute('data-filter');
-        scrollToElement(`#${filterValue}`);
+        const noResultsMessage = document.getElementById('no-results-message');
+        const productsSection = document.querySelector('.products');
+        
+        // Сброс предыдущего состояния
         document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
+        
+        // Показать все товары, если фильтр пустой
+        if (!filterValue) {
+            document.querySelectorAll('.product').forEach(product => {
+                product.style.display = 'block';
+            });
+            noResultsMessage.style.display = 'none';
+            return;
+        }
+        
+        // Фильтрация товаров
+        let hasResults = false;
+        document.querySelectorAll('.product').forEach(product => {
+            if (product.id === filterValue) {
+                product.style.display = 'block';
+                hasResults = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+        
+        // Обработка случая, когда нет результатов
+        if (!hasResults) {
+            noResultsMessage.style.display = 'block';
+            // Плавная прокрутка к сообщению
+            noResultsMessage.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        } else {
+            noResultsMessage.style.display = 'none';
+            // Прокрутка к первому найденному товару
+            const firstProduct = document.querySelector(`.product[id="${filterValue}"]`);
+            if (firstProduct) {
+                firstProduct.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
     });
 });
 
