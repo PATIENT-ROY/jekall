@@ -238,3 +238,42 @@ setInterval(updateAll, 60000);
 
 // Вызываем функции при загрузке страницы
 document.addEventListener('DOMContentLoaded', updateAll);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product');
+    const showMoreButton = document.getElementById('show-more');
+    let visibleProducts = 4; // Начальное количество видимых продуктов
+
+    // Проверяем, если количество продуктов больше 4
+    if (products.length > visibleProducts) {
+        showMoreButton.style.display = 'block';
+    } else {
+        showMoreButton.style.display = 'none';
+    }
+
+    // Добавляем обработчик события для кнопки "Показать еще ..."
+    showMoreButton.addEventListener('click', () => {
+        const additionalProducts = 2; // Количество дополнительных продуктов для показа
+        
+        // Показываем следующие additionalProducts продуктов
+        for (let i = 0; i < additionalProducts; i++) {
+            if (visibleProducts + i < products.length) {
+                products[visibleProducts + i].style.display = 'block';
+            }
+        }
+        
+        visibleProducts += additionalProducts;
+
+        // Если все продукты показаны, скрываем кнопку
+        if (visibleProducts >= products.length) {
+            showMoreButton.style.display = 'none';
+        }
+    });
+
+    // Изначально скрываем все продукты, кроме первых 4
+    products.forEach((product, index) => {
+        if (index >= visibleProducts) {
+            product.style.display = 'none';
+        }
+    });
+});
