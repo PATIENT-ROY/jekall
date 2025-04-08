@@ -3,6 +3,7 @@
     --hover-color: #128C7E;
     --background-color: #f9f9f9;
     --text-color: #333;
+    --text-error-color: #ff4d4d; 
 }
 body {
     font-family: Arial, sans-serif;
@@ -32,7 +33,7 @@ main {
 .header {
     padding: 20px 0;
     background-color: #333;
-    color: #fff;
+    color: var(--background-color);
     width: 100%;
 }
 
@@ -42,7 +43,7 @@ main {
     left: 0;
     width: 100%;
     background-color: #333;
-    color: #fff;
+    color:  var(--background-color);
     z-index: 1000; /* Убедитесь, что шапка поверх других элементов */
     padding: 10px 0;
 }
@@ -94,8 +95,8 @@ main {
 .search button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #25D366;
-    color: #fff;
+    background-color: var(--primary-color);
+    color:  var(--background-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -103,7 +104,7 @@ main {
 }
 
 .search button:hover {
-    background-color: #128C7E;
+    background-color: var(--hover-color);
 }
 
 .menu ul {
@@ -116,20 +117,20 @@ main {
 
 .menu a {
     text-decoration: none;
-    color: #fff;
+    color:  var(--background-color);
     cursor: pointer;
 }
 
 .menu a:hover {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid  var(--background-color);
 }
 #no-results-message {
     display: none;
     padding: 20px;
-    background: #ffeeee;
+    background: var(--background-color);
     border: 1px solid #ffcccc;
     border-radius: 5px;
-    color: #cc0000;
+    color: var(--text-error-color);
     margin: 20px auto;
     max-width: 500px;
     text-align: center;
@@ -470,6 +471,7 @@ footer {
     width: 100%;
     height: 700px;
     display: block;
+    border-radius: 10px;
 }
 .img-slide{
     width: 100%;
