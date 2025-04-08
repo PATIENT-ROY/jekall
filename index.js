@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 });
 // Обновление текущего года в футере
@@ -85,12 +86,14 @@ document.querySelectorAll('.menu a').forEach(link => {
 });
 
 // // Фильтры
+// Фильтры
 document.querySelectorAll('.filter-button').forEach(button => {
     button.addEventListener('click', () => {
         const filterValue = button.getAttribute('data-filter');
         const noResultsMessage = document.getElementById('no-results-message');
         const productsSection = document.querySelector('.products');
-        
+        const showMoreButton = document.getElementById('show-more'); // Получаем кнопку "Показать еще ..."
+
         // Сброс предыдущего состояния
         document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
@@ -101,6 +104,7 @@ document.querySelectorAll('.filter-button').forEach(button => {
                 product.style.display = 'block';
             });
             noResultsMessage.style.display = 'none';
+            showMoreButton.style.display = products.length > 4 ? 'block' : 'none'; // Показываем кнопку, если товаров больше 4
             return;
         }
         
@@ -118,6 +122,7 @@ document.querySelectorAll('.filter-button').forEach(button => {
         // Обработка случая, когда нет результатов
         if (!hasResults) {
             noResultsMessage.style.display = 'block';
+            showMoreButton.style.display = 'none'; // Скрываем кнопку, если нет результатов
             // Плавная прокрутка к сообщению
             noResultsMessage.scrollIntoView({
                 behavior: 'smooth',
@@ -125,6 +130,7 @@ document.querySelectorAll('.filter-button').forEach(button => {
             });
         } else {
             noResultsMessage.style.display = 'none';
+            showMoreButton.style.display = products.length > 4 ? 'block' : 'none'; // Показываем кнопку, если товаров больше 4
             // Прокрутка к первому найденному товару
             const firstProduct = document.querySelector(`.product[id="${filterValue}"]`);
             if (firstProduct) {
@@ -136,6 +142,7 @@ document.querySelectorAll('.filter-button').forEach(button => {
         }
     });
 });
+
 
 // Слайдер
 const totalSlides = document.querySelectorAll('.trailer-slide').length;
