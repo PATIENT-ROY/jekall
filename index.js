@@ -9,6 +9,7 @@ const searchInput = document.querySelector('.search input');
 const products = document.querySelectorAll('.product');
 const noResultsMessage = document.getElementById('no-results-message');
 const productsSection = document.getElementById('products');
+const showMoreButton = document.getElementById('show-more'); // Получаем кнопку "Показать еще ..."
 
 if (searchInput && productsSection) {
     searchInput.addEventListener('input', () => {
@@ -30,6 +31,7 @@ if (searchInput && productsSection) {
         });
 
         noResultsMessage.style.display = foundProducts === 0 ? 'block' : 'none';
+        showMoreButton.style.display = 'none';
     });
 }
 

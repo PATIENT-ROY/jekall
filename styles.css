@@ -222,6 +222,7 @@ main {
       width: auto;
       margin: 0;
       cursor: pointer;
+      font-size: 13px;
     }
   }
 
@@ -719,3 +720,39 @@ footer p {
         padding-top: 120px;
     } 
 }
+.message_container{
+    padding: 16px;
+}
+.no_results_message {
+    position: relative;
+    padding-left: 70px;
+}
+
+.no_results_message::before {
+    content: "\f06a"; /* Иконка Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+    .no_results_message {
+        padding-left: 60px;
+    }
+    
+    .no_results_message::before {
+        font-size: 1.8rem;
+        left: 15px;
+    }
+}
+.show-more_container{
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
