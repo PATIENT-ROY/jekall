@@ -86,7 +86,6 @@ document.querySelectorAll('.menu a').forEach(link => {
 });
 
 // // Фильтры
-// Фильтры
 document.querySelectorAll('.filter-button').forEach(button => {
     button.addEventListener('click', () => {
         const filterValue = button.getAttribute('data-filter');
