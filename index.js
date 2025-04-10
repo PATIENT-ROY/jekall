@@ -1,6 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 });
+function resetPage() {
+    window.location.reload(); // Или сброс полей вручную
+}
 // Обновление текущего года в футере
 document.getElementById('year').textContent = new Date().getFullYear();
 

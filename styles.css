@@ -34,7 +34,6 @@ main {
     padding: 20px 0;
     background-color: #333;
     color: var(--background-color);
-    width: 100%;
 }
 
 .header {
@@ -65,7 +64,7 @@ main {
     gap: 10px;
 }
 .logo img {
-    width: 65px;
+    width: 50px;
     height: 50px;
     border-radius: 25px;
 }
@@ -124,18 +123,6 @@ main {
 .menu a:hover {
     border-bottom: 2px solid  var(--background-color);
 }
-#no-results-message {
-    display: none;
-    padding: 20px;
-    background: var(--background-color);
-    border: 1px solid #ffcccc;
-    border-radius: 5px;
-    color: var(--text-error-color);
-    margin: 20px auto;
-    max-width: 500px;
-    text-align: center;
-    font-size: 1.2em;
-}
 
 .products {
     display: flex;
@@ -160,12 +147,7 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     border: 2px solid transparent;
 }
-.product:hover {
-    transform: translateY(-5px) scale(1.02); /* Поднимаем и увеличиваем */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
-    background-color: #f9f9f9; /* Светлый фон */
-    border-color: #25D366; /* Зеленая граница */
-}
+
 .product-card__image{
     max-width: 100%;
     height: auto;
@@ -195,6 +177,7 @@ main {
     color: #333;
 }
 
+
 .product-card__button{
     display: inline-block;
     margin-top: 10px;
@@ -206,9 +189,11 @@ main {
 }
 
 .product-card__button:hover {
+    transform: translateY(-5px) scale(1.02); /* Поднимаем и увеличиваем */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
     background-color: #128C7E;
+    border-color: #25D366; /* Зеленая граница */
 }
-
 /* Добавляем только этот медиазапрос в конец файла */
 @media (max-width: 768px) {
     .products {
@@ -226,18 +211,11 @@ main {
     }
   }
 
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-}
 @media (max-width: 768px) {
     .header_container {
         flex-direction: column;
         align-items: flex-start;
+        padding: 16px;
     }
 
     .menu ul {
@@ -267,13 +245,11 @@ footer {
         align-items: flex-start; /* Выравнивание по левому краю */
     }
 
-    .logo {
-        margin-bottom: 20px; /* Отступ между логотипом и поиском */
-    }
 
     .search {
         width: 100%; /* Поиск на всю ширину */
         margin-bottom: 20px; /* Отступ между поиском и меню */
+        padding-top: 10px;
     }
 
     .search input {
@@ -346,15 +322,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Анимация при наведении */
-.about-us, .contact-address {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-us:hover, .contact-address:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
 
 /* Адаптивность */
 @media (max-width: 768px) {
@@ -607,8 +574,8 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    width: 100%;
 }
+
 
 .social-links {
     margin-bottom: 15px;
@@ -724,8 +691,16 @@ footer p {
     padding: 16px;
 }
 .no_results_message {
+    display: none;
     position: relative;
-    padding-left: 70px;
+    padding: 20px;
+    background: var(--background-color);
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+    color: var(--text-error-color);
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
 }
 
 .no_results_message::before {
@@ -746,8 +721,8 @@ footer p {
     }
     
     .no_results_message::before {
-        font-size: 1.8rem;
-        left: 15px;
+        font-size: 1.4rem;
+        left: 12px;
     }
 }
 .show-more_container{
