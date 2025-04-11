@@ -95,54 +95,36 @@ document.querySelectorAll('.filter-button').forEach(button => {
     button.addEventListener('click', () => {
         const filterValue = button.getAttribute('data-filter');
         const noResultsMessage = document.getElementById('no-results-message');
-        const productsSection = document.querySelector('.products');
-        const showMoreButton = document.getElementById('show-more'); // Получаем кнопку "Показать еще ..."
-
-        // Сброс предыдущего состояния
+        const products = Array.from(document.querySelectorAll('.product'));
+        const showMoreButton = document.getElementById('show-more');
+        
+        // Сброс предыдущего состояния кнопок
         document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         
-        // Показать все товары, если фильтр пустой
-        if (!filterValue) {
-            document.querySelectorAll('.product').forEach(product => {
-                product.style.display = 'block';
-            });
-            noResultsMessage.style.display = 'none';
-            showMoreButton.style.display = products.length > 4 ? 'block' : 'none'; // Показываем кнопку, если товаров больше 4
-            return;
-        }
-        
         // Фильтрация товаров
-        let hasResults = false;
-        document.querySelectorAll('.product').forEach(product => {
-            if (product.id === filterValue) {
-                product.style.display = 'block';
-                hasResults = true;
-            } else {
-                product.style.display = 'none';
-            }
-        });
-        
-        // Обработка случая, когда нет результатов
-        if (!hasResults) {
-            noResultsMessage.style.display = 'block';
-            showMoreButton.style.display = 'none'; // Скрываем кнопку, если нет результатов
-            // Плавная прокрутка к сообщению
-            noResultsMessage.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-        } else {
-            noResultsMessage.style.display = 'none';
-            showMoreButton.style.display = products.length > 4 ? 'block' : 'none'; // Показываем кнопку, если товаров больше 4
-            // Прокрутка к первому найденному товару
-            const firstProduct = document.querySelector(`.product[id="${filterValue}"]`);
-            if (firstProduct) {
-                firstProduct.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+        let filteredProducts = filterValue 
+            ? products.filter(product => product.id === filterValue)
+            : products;
+
+        // Установка количества товаров для показа (все отфильтрованные товары)
+        const productsToShow = filteredProducts.length;
+
+        // Скрытие всех товаров
+        products.forEach(product => (product.style.display = 'none'));
+
+        // Показ всех отфильтрованных товаров
+        filteredProducts.slice(0, productsToShow).forEach(product => (product.style.display = 'block'));
+
+        // Управление сообщением "нет результатов" и кнопкой "Показать еще"
+        noResultsMessage.style.display = filteredProducts.length === 0 ? 'block' : 'none';
+        showMoreButton.style.display = 'none'; // Скрываем кнопку "Показать ещё", так как показываем все товары
+
+        // Прокрутка
+        if (filteredProducts.length === 0) {
+            noResultsMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (filterValue) {
+            filteredProducts[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
