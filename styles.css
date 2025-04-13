@@ -58,10 +58,13 @@ main {
     
 }
 
-.logo {
+.logo a{
     display: flex;
     align-items: center;
     gap: 15px; /* Увеличенное расстояние между логотипом и текстом */
+    text-decoration: none;
+    color: #ccc;
+    font-size: 12px;
 }
 
 .logo img {
@@ -84,6 +87,7 @@ main {
         width: 50px; /* Адаптация размера изображения */
         height: 50px;
     }
+
 }
 
 .catalog {
@@ -106,6 +110,13 @@ main {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Плавные изменения */
+}
+
+.search input:focus {
+    outline: none; /* Убираем стандартный контур */
+    border-color: #4a90e2; /* Новый цвет рамки */
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3); /* Мягкая тень */
 }
 
 .search button {
@@ -126,9 +137,11 @@ main {
 .menu ul {
     list-style-type: none;
     display: flex;
-    gap: 50px;
+   justify-content: space-between;
+   gap: 25px;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 .menu a {
@@ -169,6 +182,10 @@ main {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+.product-card__image:hover {
+    opacity: 0.9;
 }
 .image-container {
     width: 100%; /* Занимает всю ширину родителя */
@@ -198,8 +215,7 @@ main {
 .product-card__button{
     display: inline-block;
     margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 10px;
     background-color: #25D366;
     color: #fff;
     text-decoration: none;
@@ -229,26 +245,28 @@ main {
     }
   }
 
+
 @media (max-width: 768px) {
     .header_container {
         flex-direction: column;
         align-items: flex-start;
-        padding: 16px;
+        padding: 12px;
     }
 
     .menu ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
     }
 
     .search {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
     }
 
     .search button {
         margin-left: 0;
-        margin-top: 10px;
+        font-size: 12px;
     }
 
     .image-container {
@@ -257,12 +275,13 @@ main {
 
     .search {
         width: 100%; /* Поиск на всю ширину */
-        margin-bottom: 20px; /* Отступ между поиском и меню */
+     
         padding-top: 10px;
     }
 
     .search input {
         flex: 1; /* Поле ввода занимает всё доступное пространство */
+        font-size: 12px;
     }
 
     .menu ul {
@@ -429,26 +448,32 @@ main {
 }
 /* Стили для трейлера */
 .trailer {
-    width: 100%;
+ 
     overflow: hidden;
     position: relative;
+    padding: 10px;
     
 }
 
 .trailer-container {
     display: flex;
     transition: transform 0.5s ease; /* Плавная анимация прокрутки */
+    margin: 0 -16px;
 }
 
 .trailer-slide {
     min-width: 100%; /* Каждый слайд занимает 100% ширины */
     box-sizing: border-box;
+    padding: 0 16px;
+    border-radius: 10px; /* Скругляем контейнер */
+    overflow: hidden;
 }
 
 .trailer-slide img {
     width: 100%;
     height: 700px;
     display: block;
+    object-fit: contain; 
     border-radius: 10px;
 }
 .img-slide{
@@ -524,7 +549,7 @@ main {
     background-color: #f9f9f9;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd; 
-    margin-top: 150px;
+    margin-top: 90px;
 }
 
 
@@ -653,7 +678,7 @@ footer p {
   
   .container {
     text-align: center;
-    padding: 20px;}
+    padding: 10px;}
  
   .header-container_title{
     font-size: 1.5rem;
@@ -706,7 +731,6 @@ footer p {
     position: relative;
     padding: 20px;
     background: var(--background-color);
-    border: 1px solid #ffcccc;
     border-radius: 5px;
     color: var(--text-error-color);
     margin: 20px auto;
@@ -714,17 +738,7 @@ footer p {
     text-align: center;
 }
 
-.no_results_message::before {
-    content: "\f06a"; /* Иконка Font Awesome */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: #ff4d4d;
-}
+
 
 @media (max-width: 768px) {
     .no_results_message {
@@ -737,9 +751,111 @@ footer p {
     }
 }
 .show-more_container{
-    padding: 60px 20px;
+    padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
 
+.show-more-button {
+    /* Базовые стили */
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #4a6bff;
+    border: none;
+    border-radius: 50px; /* Скруглённые углы */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(74, 107, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    /* Скрываем по умолчанию (управляется JS) */
+    display: none;
+}
+
+/* Эффект при наведении */
+.show-more-button:hover {
+    background-color: #3a56e0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(74, 107, 255, 0.3);
+}
+
+/* Эффект при нажатии */
+.show-more-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(74, 107, 255, 0.2);
+}
+
+/* Анимация "волны" при клике */
+.show-more-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.show-more-button:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .show-more-button {
+        padding: 10px 20px; /* Уменьшение отступов */
+        font-size: 14px; /* Уменьшение размера шрифта */
+    }
+}
+#products,
+#about-us,
+#contact-address {
+    scroll-margin-top: 100px; /* Высота вашего хедера + 20-30px */
+}
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    #products,
+    #about-us,
+    #contact-address {
+        scroll-margin-top: 250px; /* Меньше, если хедер компактный */
+    }
+}
+/* Для WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;  /* Толщина скроллбара */
+    background: transparent;  /* Прозрачный фон трека */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);  /* Полупрозрачный ползунок */
+    border-radius: 4px;  /* Закругление */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);  /* Чуть темнее при наведении */
+}
+
+/* Для Firefox */
+html {
+    scrollbar-width: thin;  /* "auto" | "thin" | "none" */
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;  /* thumb и track */
+}

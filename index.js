@@ -9,52 +9,90 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Поиск товаров
 const searchInput = document.querySelector('.search input');
+const searchButton = document.getElementById('search-button'); // Получаем кнопку
 const products = document.querySelectorAll('.product');
 const noResultsMessage = document.getElementById('no-results-message');
 const productsSection = document.getElementById('products');
-const showMoreButton = document.getElementById('show-more'); // Получаем кнопку "Показать еще ..."
+const showMoreButton = document.getElementById('show-more');
 
-if (searchInput && productsSection) {
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        let foundProducts = 0;
+if (searchInput && searchButton && productsSection) {
+    // Поиск при нажатии кнопки
+    searchButton.addEventListener('click', () => {
+        performSearch();
+    });
 
-        if (query.trim() !== "") {
-            productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Опционально: поиск при нажатии Enter в поле ввода
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch();
         }
-
-        products.forEach(product => {
-            const title = product.querySelector('h2').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block';
-                foundProducts++;
-            } else {
-                product.style.display = 'none';
-            }
-        });
-
-        noResultsMessage.style.display = foundProducts === 0 ? 'block' : 'none';
-        showMoreButton.style.display = 'none';
     });
 }
 
+function performSearch() {
+    const query = searchInput.value.toLowerCase();
+    let foundProducts = 0;
+
+    if (query.trim() !== "") {
+        productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    products.forEach(product => {
+        const title = product.querySelector('h2').textContent.toLowerCase();
+        if (title.includes(query)) {
+            product.style.display = 'block';
+            foundProducts++;
+        } else {
+            product.style.display = 'none';
+        }
+    });
+
+    noResultsMessage.style.display = foundProducts === 0 ? 'block' : 'none';
+    showMoreButton.style.display = 'none';
+
+    // Очистка поля ввода после выполнения поиска
+    searchInput.value = '';
+}
+
+
 // Смена изображений при наведении
 document.querySelectorAll('.main-image').forEach(img => {
-    const images = JSON.parse(img.getAttribute('data-images'));
-    let currentIndex = 0;
-    let interval;
+    try {
+        // Проверяем наличие data-images
+        if (!img.dataset.images) {
+            console.error('Атрибут data-images отсутствует у элемента:', img);
+            return;
+        }
 
-    img.addEventListener('mouseenter', () => {
-        interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            img.src = images[currentIndex];
-        }, 1000);
-    });
+        const images = JSON.parse(img.dataset.images);
+        
+        // Проверяем, что images - массив и не пустой
+        if (!Array.isArray(images) || images.length === 0) {
+            console.error('Некорректный формат данных в data-images:', img.dataset.images);
+            return;
+        }
 
-    img.addEventListener('mouseleave', () => {
-        clearInterval(interval);
-        img.src = images[0];
-    });
+        let currentIndex = 0;
+        let interval;
+
+        // Предзагрузка изображений
+        images.forEach(src => new Image().src = src);
+
+        img.addEventListener('mouseenter', () => {
+            interval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                img.src = images[currentIndex];
+            }, 1000);
+        });
+
+        img.addEventListener('mouseleave', () => {
+            clearInterval(interval);
+            img.src = images[0]; // Возвращаем первое изображение
+        });
+
+    } catch (e) {
+        console.error('Ошибка в обработчике изображения:', e);
+    }
 });
 
 // Меню
@@ -201,23 +239,26 @@ function getTodayStatus() {
             statusElement.style.color = "#ff4d4d";
         }
     } else {
-        console.error("Элемент #status не найден или данные о часах работы отсутствуют.");
+        // console.error("Элемент #status не найден или данные о часах работы отсутствуют.");
     }
 }
 
-// Функция для обновления часов работы
+
+// Функция для получения часов работы на сегодня
 function getTodayHours() {
     const today = new Date();
     const dayOfWeek = today.getDay();
     const todayHours = openingHours[dayOfWeek];
-    const todayScheduleElement = document.getElementById('today-schedule');
 
-    if (todayScheduleElement && todayHours) {
-        todayScheduleElement.textContent = todayHours.hours;
+    if (todayHours) {
+        // Здесь вы можете добавить код, который будет обрабатывать часы работы
+        // Например, обновить интерфейс или выполнять другие действия
     } else {
-        console.error("Элемент #today-schedule не найден или данные о часах работы отсутствуют.");
+        // Если данные о часах работы отсутствуют, вы можете обработать это по-другому
+        // Например, показать уведомление пользователю или установить значение по умолчанию
     }
 }
+
 
 // Функция для обновления всего
 function updateAll() {
@@ -270,3 +311,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
