@@ -96,15 +96,42 @@ document.querySelectorAll('.main-image').forEach(img => {
 });
 
 // Меню
-const menuToggle = document.querySelector('.menu-toggle');
+const menuToggleOpen = document.querySelector('.open-menu');
+const menuToggleClose = document.querySelector('.close-menu');
 const menu = document.querySelector('.menu');
 
-if (menuToggle && menu) {
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
+function updateMenuToggleVisibility() {
+    if (window.innerWidth > 868) {
+        // Скрываем кнопку закрытия и показываем кнопку открытия на больших экранах
+        menuToggleClose.style.display = 'none';
+        menuToggleOpen.style.display = 'none';
+        menu.classList.remove('active'); // Скрываем меню
+    } else {
+        // Показываем кнопку открытия на мобильных устройствах
+        menuToggleOpen.style.display = 'block';
+    }
 }
+
+if (menuToggleOpen && menuToggleClose && menu) {
+    menuToggleOpen.addEventListener('click', () => {
+        menu.classList.add('active'); // Показать меню
+        menuToggleOpen.style.display = 'none'; // Скрыть кнопку открытия
+        menuToggleClose.style.display = 'block'; // Показать кнопку закрытия
+    });
+
+    menuToggleClose.addEventListener('click', () => {
+        menu.classList.remove('active'); // Скрыть меню
+        menuToggleOpen.style.display = 'block'; // Показать кнопку открытия
+        menuToggleClose.style.display = 'none'; // Скрыть кнопку закрытия
+    });
+
+    // Проверяем размер окна при загрузке страницы
+    updateMenuToggleVisibility();
+
+    // Добавляем обработчик события изменения размера окна
+    window.addEventListener('resize', updateMenuToggleVisibility);
+}
+
 
 // Прокрутка к элементу
 function scrollToElement(targetId, highlightColor = "#25D366") {
@@ -232,7 +259,7 @@ function getTodayStatus() {
         if (todayHours.open) {
             const currentTime = currentHour + currentMinutes / 60;
             const isOpen = currentTime >= todayHours.start && currentTime < todayHours.end;
-            statusElement.textContent = isOpen ? "Открыто" : "Закрыто";
+            statusElement.textContent = isOpen ? "c'est Ouverte" : "C'est Ferme";
             statusElement.style.color = isOpen ? "#25D366" : "#ff4d4d";
         } else {
             statusElement.textContent = "Закрыто";
@@ -312,4 +339,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+  // Показываем/скрываем кнопку при прокрутке
+  const backToTopButton = document.getElementById('back-to-top');
+    
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+  
+  // Плавная прокрутка вверх
+  backToTopButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
