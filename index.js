@@ -58,83 +58,133 @@ function performSearch() {
 // Смена изображений при наведении
 document.querySelectorAll('.main-image').forEach(img => {
     try {
-        // Проверяем наличие data-images
-        if (!img.dataset.images) {
-            console.error('Атрибут data-images отсутствует у элемента:', img);
-            return;
-        }
-
+        if (!img.dataset.images) return;
         const images = JSON.parse(img.dataset.images);
-        
-        // Проверяем, что images - массив и не пустой
-        if (!Array.isArray(images) || images.length === 0) {
-            console.error('Некорректный формат данных в data-images:', img.dataset.images);
-            return;
-        }
+        if (!Array.isArray(images) || images.length === 0) return;
 
         let currentIndex = 0;
         let interval;
+        let startX = 0;
+        let isDragging = false;
+        const isMobile = window.innerWidth <= 868;
 
         // Предзагрузка изображений
         images.forEach(src => new Image().src = src);
 
-        img.addEventListener('mouseenter', () => {
-            interval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                img.src = images[currentIndex];
-            }, 1000);
-        });
+        function showImage(index) {
+            currentIndex = (index + images.length) % images.length;
+            img.src = images[currentIndex];
+        }
 
-        img.addEventListener('mouseleave', () => {
+        // Для десктопов - анимация при наведении
+        function setupDesktopBehavior() {
+            img.style.cursor = 'default';
+            img.removeEventListener('touchstart', handleTouchStart);
+            img.removeEventListener('touchmove', handleTouchMove);
+            
+            img.addEventListener('mouseenter', () => {
+                interval = setInterval(() => showImage(currentIndex + 1), 1000);
+            });
+            img.addEventListener('mouseleave', () => {
+                clearInterval(interval);
+                showImage(0);
+            });
+        }
+
+        // Для мобильных - свайп жесты
+        function setupMobileBehavior() {
+            img.style.cursor = 'grab';
             clearInterval(interval);
-            img.src = images[0]; // Возвращаем первое изображение
+            
+            img.addEventListener('touchstart', handleTouchStart, { passive: false });
+            img.addEventListener('touchmove', handleTouchMove, { passive: false });
+        }
+
+        function handleTouchStart(e) {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }
+
+        function handleTouchMove(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            
+            const x = e.touches[0].clientX;
+            const diff = startX - x;
+            
+            if (Math.abs(diff) > 50) { // Порог свайпа
+                if (diff > 0) {
+                    showImage(currentIndex + 1); // Свайп влево - следующее
+                } else {
+                    showImage(currentIndex - 1); // Свайп вправо - предыдущее
+                }
+                isDragging = false;
+            }
+        }
+
+        // Инициализация
+        if (isMobile) {
+            setupMobileBehavior();
+        } else {
+            setupDesktopBehavior();
+        }
+
+        // Обработчик изменения размера
+        window.addEventListener('resize', () => {
+            const newIsMobile = window.innerWidth <= 868;
+            if (isMobile !== newIsMobile) {
+                isMobile = newIsMobile;
+                if (isMobile) {
+                    setupMobileBehavior();
+                } else {
+                    setupDesktopBehavior();
+                    showImage(0);
+                }
+            }
         });
 
     } catch (e) {
-        console.error('Ошибка в обработчике изображения:', e);
+        console.error('Ошибка:', e);
     }
 });
 
-// Меню
-const menuToggleOpen = document.querySelector('.open-menu');
-const menuToggleClose = document.querySelector('.close-menu');
-const menu = document.querySelector('.menu');
 
-function updateMenuToggleVisibility() {
-    if (window.innerWidth > 868) {
-        // Скрываем кнопку закрытия и показываем кнопку открытия на больших экранах
-        menuToggleClose.style.display = 'none';
-        menuToggleOpen.style.display = 'none';
-        menu.classList.remove('active'); // Скрываем меню
-    } else {
-        // Показываем кнопку открытия на мобильных устройствах
-        menuToggleOpen.style.display = 'block';
+// // Меню
+// Обновленный скрипт
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggleOpen = document.querySelector('.open-menu');
+    const menuToggleClose = document.querySelector('.close-menu');
+    const menu = document.querySelector('.menu');
+  
+    function toggleMenu() {
+      const isMenuOpen = menu.classList.toggle('active');
+      menuToggleOpen.style.display = isMenuOpen ? 'none' : 'block';
+      menuToggleClose.style.display = isMenuOpen ? 'block' : 'none';
     }
-}
-
-if (menuToggleOpen && menuToggleClose && menu) {
-    menuToggleOpen.addEventListener('click', () => {
-        menu.classList.add('active'); // Показать меню
-        menuToggleOpen.style.display = 'none'; // Скрыть кнопку открытия
-        menuToggleClose.style.display = 'block'; // Показать кнопку закрытия
-    });
-
-    menuToggleClose.addEventListener('click', () => {
-        menu.classList.remove('active'); // Скрыть меню
-        menuToggleOpen.style.display = 'block'; // Показать кнопку открытия
-        menuToggleClose.style.display = 'none'; // Скрыть кнопку закрытия
-    });
-
-    // Проверяем размер окна при загрузке страницы
-    updateMenuToggleVisibility();
-
-    // Добавляем обработчик события изменения размера окна
-    window.addEventListener('resize', updateMenuToggleVisibility);
-}
-
+  
+    function handleResize() {
+      if (window.innerWidth > 868) {
+        menu.classList.remove('active');
+        menuToggleOpen.style.display = 'none';
+        menuToggleClose.style.display = 'none';
+      } else {
+        menuToggleOpen.style.display = menu.classList.contains('active') ? 'none' : 'block';
+        menuToggleClose.style.display = menu.classList.contains('active') ? 'block' : 'none';
+      }
+    }
+  
+    if (menuToggleOpen && menuToggleClose && menu) {
+      menuToggleOpen.addEventListener('click', toggleMenu);
+      menuToggleClose.addEventListener('click', toggleMenu);
+      window.addEventListener('resize', handleResize);
+      
+      // Инициализация при загрузке
+      handleResize();
+    }
+  });
 
 // Прокрутка к элементу
-function scrollToElement(targetId, highlightColor = "#25D366") {
+function scrollToElement(targetId, highlightColor = "#FFC000") {
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -260,7 +310,7 @@ function getTodayStatus() {
             const currentTime = currentHour + currentMinutes / 60;
             const isOpen = currentTime >= todayHours.start && currentTime < todayHours.end;
             statusElement.textContent = isOpen ? "c'est Ouverte" : "C'est Ferme";
-            statusElement.style.color = isOpen ? "#25D366" : "#ff4d4d";
+            statusElement.style.color = isOpen ? "var(--primary-color)" : "var(--text-error-color)";
         } else {
             statusElement.textContent = "Закрыто";
             statusElement.style.color = "#ff4d4d";
