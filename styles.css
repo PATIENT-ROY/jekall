@@ -12,7 +12,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
+    background-color: var(--light-background);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -183,18 +183,16 @@ main {
 }
 
 .product {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--background-color);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
     width: 300px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    border: 2px solid transparent;
+    border: 1px solid #ececec;
+    border-radius: 0px;
     scroll-margin-top: 100px;
-    /* Отступ при скролле */
 }
 
 .product-card__image {
@@ -340,6 +338,7 @@ main {
     }
 
     .image-container {
+        margin: 12px auto;
         max-width: 200px;
         /* Уменьшаем размер на мобильных устройствах */
     }
@@ -377,6 +376,7 @@ main {
     position: absolute;
     right: 20px;
     top: 20px;
+    transition: transform 0.3s ease;
 }
 
 @media (max-width: 868px) {
@@ -410,50 +410,7 @@ main {
     }
 }
 
-/* Обновленные стили */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 5px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
 
-@media (max-width: 868px) {
-    .open-menu {
-        display: block;
-    }
-
-    .close-menu {
-        display: none;
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 20px 0;
-        z-index: 999;
-    }
-
-    .menu.active {
-        display: block;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 15px;
-        padding: 0 20px;
-    }
-}
 
 
 /* Общие стили для секций */
@@ -844,18 +801,7 @@ footer p {
     }
 }
 
-.hidden {
-    display: none;
-}
-
-.container {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-.container {
+.filters_container {
     text-align: center;
     padding: 10px;
 }
@@ -935,7 +881,7 @@ footer p {
 
 .show-more_container {
     padding: 40px 20px;
-    background-color: var(--background-color);
+    background-color: var(--light-background);
     text-align: center;
 }
 
@@ -1093,4 +1039,79 @@ html {
 .back-to-top svg {
     width: 24px;
     height: 24px;
+}
+
+/* Базовые стили (десктоп и планшеты) */
+.storage-selector {
+    display: block;
+    width: 60%;
+    margin: 12px auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Планшеты (промежуточный размер) */
+@media (max-width: 1024px) {
+    .storage-selector {
+        width: 70%;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    .storage-selector {
+        width: 100%;
+        /* На всю ширину */
+        margin: 10px 0;
+        /* Вертикальные отступы */
+        padding: 10px 14px;
+        font-size: 15px;
+        /* Чуть крупнее для мобилок */
+    }
+}
+
+/* Компактный мобильный вид */
+@media (max-width: 480px) {
+    .storage-selector {
+        padding: 8px 12px;
+        font-size: 14px;
+        background-size: 14px;
+        background-position: right 10px center;
+    }
+}
+
+/* Стили для фокуса (доступность) */
+.storage-selector:focus {
+    outline: none;
+    border-color: var(--hover-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Стили для метки */
+.storage-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .storage-label {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
 }
