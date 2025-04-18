@@ -408,3 +408,34 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product');
+
+    products.forEach((product) => {
+        const storageSelector = product.querySelector('.storage-selector');
+        const priceElement = product.querySelector('.product-card__price');
+
+        // Проверка наличия элементов
+        if (!storageSelector || !priceElement) return;
+
+        // Инициализация цены при загрузке
+        updatePrice(storageSelector, priceElement);
+
+        // Обработчик изменения
+        storageSelector.addEventListener('change', () => {
+            updatePrice(storageSelector, priceElement);
+        });
+    });
+});
+
+function updatePrice(selector, priceElement) {
+    const selectedOption = selector.options[selector.selectedIndex];
+    const newPrice = selectedOption.getAttribute('data-price');
+    
+    // Форматирование цены (замена запятой на точку если нужно)
+    const formattedPrice = newPrice.replace(',', '.');
+    
+    priceElement.textContent = `Prix: ${formattedPrice}$`;
+}

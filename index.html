@@ -134,15 +134,22 @@
                 Désolé, aucun produit trouvé.
             </div>
         </section>
-        <section class="products" id="products">
-            <!-- Пример товара -->
+        <section class="products" id="products" aria-labelledby="products-heading">
             <div class="product" id="apple">
                 <div class="image-container">
                     <img src="./images/Apple/apple1.png" alt="telephone 1" class="product-card__image main-image"
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                
+                <label for="storage-1">Choisissez la capacité de stockage:</label>
+                <select id="storage-1" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
+        
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank">
@@ -155,7 +162,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-2">Choisissez la capacité de stockage:</label>
+                <select id="storage-2" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -166,7 +179,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-3">Choisissez la capacité de stockage:</label>
+                <select id="storage-3" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1000,99">256 Go</option>
+                    <option value="512" data-price="1299,45">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -177,7 +196,13 @@
                         data-images='["../images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price"id="price">Prix: 999$</p>
+                <label for="storage-4">Choisissez la capacité de stockage:</label>
+                <select id="storage-4" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -188,7 +213,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-5">Choisissez la capacité de stockage:</label>
+                <select id="storage-5" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -199,7 +230,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Xiaomi 3</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-6">Choisissez la capacité de stockage:</label>
+                <select id="storage-6" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -210,7 +247,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-7">Choisissez la capacité de stockage:</label>
+                <select id="storage-7" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -221,7 +264,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-8">Choisissez la capacité de stockage:</label>
+                <select id="storage-8" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -233,7 +282,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-9">Choisissez la capacité de stockage:</label>
+                <select id="storage-9" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -244,7 +299,13 @@
                         data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price">Prix: 999$</p>
+                <p class="product-card__price" id="price">Prix: 999$</p>
+                <label for="storage-10">Choisissez la capacité de stockage:</label>
+                <select id="storage-10" class="storage-selector">
+                    <option value="128" data-price="999">128 Go</option>
+                    <option value="256" data-price="1099">256 Go</option>
+                    <option value="512" data-price="1299">512 Go</option>
+                </select>
                 <a class="product-card__button"
                     href="https://wa.me/+243814264458?text=Здравствуйте! Bonjour! Je voudrais commander un iPhone 14 Pro."
                     target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
@@ -267,7 +328,11 @@
         <!-- Секция "Notre adresse" -->
         <section class="contact-address" id="contact-address">
             <h2>Adresse</h2>
-            <p>Vous pouvez nous trouver à l'adresse Colonel Ebeya, Kinshasa, République démocratique du Congo.</p>
+            <p style="padding: 0;">Vous pouvez nous trouver à L’adresse :
+                Galerie Couloir Céleste
+                Jacque Barron 100, Kinshasa Gombe,
+                Rep Dem du Congo.</p>
+            <p>Reference : Arme du Salut MEMLING</p>
             <div class="opening-hours">
                 <h3>Heures d'ouverture :</h3>
                 <p id="today-hours">
