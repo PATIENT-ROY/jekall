@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jekall Mobiles - Shop de vente des téléphones mobiles et accessoires</title>
-    <meta name="description"
-        content="Large choix de smartphones Apple, Samsung, Xiaomi et autres marques. Garantie qualité, prix accessibles.">
+    <meta name="description" content="Large choix de smartphones Apple, Samsung, Xiaomi et autres marques. Garantie qualité, prix accessibles.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jekallmobiles.com/">
     <meta property="og:title" content="Jekall Mobiles - Magasin officiel de téléphones mobiles">
-    <meta property="og:description"
-        content="Meilleurs smartphones et accessoires des grandes marques. Garantie qualité, livraison rapide.">
+    <meta property="og:description" content="Meilleurs smartphones et accessoires des grandes marques. Garantie qualité, livraison rapide.">
     <meta property="og:image" content="https://jekallmobiles.com/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -22,8 +20,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jekallmobiles.com/">
     <meta property="twitter:title" content="Jekall Mobiles - Magasin officiel de téléphones mobiles">
-    <meta property="twitter:description"
-        content="Meilleurs smartphones et accessoires des grandes marques. Garantie qualité, livraison rapide.">
+    <meta property="twitter:description" content="Meilleurs smartphones et accessoires des grandes marques. Garantie qualité, livraison rapide.">
     <meta property="twitter:image" content="https://jekallmobiles.com/images/og-image.jpg">
 
     <link rel="stylesheet" href="styles.css">
@@ -52,9 +49,9 @@
             <button class="menu-toggle close-menu" aria-label="Close the menu" style="display: none;">✕</button>
             <nav class="menu">
                 <ul>
-                    <li><a href="#products">Catalogue</a></li>
-                    <li><a href="#about-us">À propos</a></li>
-                    <li><a href="#contact-address">Adresse</a></li>
+                    <li><a href="#blank" class="nav-link">Catalogue</a></li>
+                    <li><a href="#about-us" class="nav-link">À propos</a></li>
+                    <li><a href="#contact-address" class="nav-link">Adresse</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,8 +64,7 @@
         <div class="information">
             <div class="filters_container">
                 <header class="header-container">
-                    <h1 class="header-container_title">Le Prix s'oublie mais la <span class="highlight">Qualité</span>
-                        reste et assure.</h1>
+                    <h1 class="header-container_title">Le Prix s'oublie mais la <span class="highlight">Qualité</span> reste et assure.</h1>
                 </header>
 
                 <div class="categories">
@@ -125,10 +121,64 @@
             <div class="trailer-slide">
                 <img src="images/slider/slide4.png" alt="Slide 4">
             </div>
+            <div class="trailer-slide">
+                <img src="images/slider/slide5.png" alt="Slide 5">
+            </div>
         </div>
     </section>
 
     <main>
+        <section class="section-brand" id="blank">
+            <h2>Smartphones</h2>
+            <div class="brand-grid">
+                <div class="brand-item">
+                    <img src="images/brand/iPhone/iphone.png" alt="iPhone">
+                    <p>iPhone</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Samsung/samsung.png" alt="Samsung">
+                    <p>Samsung</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Google Pixel/google pixel.png" alt="Google Pixel">
+                    <p>Google Pixel</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/One plus/one plus.png" alt="One Plus">
+                    <p>One Plus</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Poco/poco.png" alt="Poco">
+                    <p>Poco</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Xiaomi/xiomi.png" alt="Xiaomi">
+                    <p>Xiaomi</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Huawei/huawei.png" alt="Huawei">
+                    <p>Huawei</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Honor/honor.png" alt="Honor">
+                    <p>Honor</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Infinix/infinix.png" alt="Infinix">
+                    <p>Infinix</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Realme/realme.png" alt="Realme">
+                    <p>Realme</p>
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand/Tecno/tecno.png" alt="Tecno">
+                    <p>Tecno</p>
+                </div>
+            </div>
+        </section>
+
+
         <section class="message_container">
             <div class="no_results_message" id="no-results-message">
                 Désolé, aucun produit trouvé.
@@ -137,8 +187,7 @@
         <section class="products" id="products">
             <div class="product" id="apple">
                 <div class="image-container">
-                    <img src="./images/Apple/apple1.png" alt="telephone 1" class="product-card__image main-image"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img src="./images/Apple/apple1.png" alt="telephone 1" class="product-card__image main-image" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -150,16 +199,13 @@
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
 
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank">
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank">
                     <i class="fab fa-whatsapp"></i>Commander via WhatsApp
                 </a>
             </div>
             <div class="product" id="apple">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Apple/apple2.png" alt="telephone 1"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Apple/apple2.png" alt="telephone 1" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -169,14 +215,11 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="apple">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Apple/apple3.png" alt="telephone 1"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Apple/apple3.png" alt="telephone 1" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -186,14 +229,11 @@
                     <option value="256" data-price="1000,99">256 Go</option>
                     <option value="512" data-price="1299,45">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="apple">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Apple/apple4.png" alt="telephone 1"
-                        data-images='["../images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Apple/apple4.png" alt="telephone 1" data-images='["../images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -203,14 +243,11 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="xiaomi">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Xiaomi/Xiaomi1.png" alt="telephone 1"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Xiaomi/Xiaomi1.png" alt="telephone 1" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">iPhone 14 Pro</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -220,14 +257,11 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="Xiaomi">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Xiaomi/Xiaomi2.png" alt="telephone 2"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Xiaomi/Xiaomi2.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Xiaomi 3</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -237,14 +271,11 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="Samsung">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Samsung/samsung1.png" alt="telephone 2"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Samsung/samsung1.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -254,16 +285,13 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="samsung">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Samsung/samsung1.png" alt="telephone 2"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/Samsung/samsung1.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
-                <h2 class="product-card__title">Samsung Galaxy S23</h2>
+                <h2 class="product-card__title">Samsung Galaxy Smartphone A56 5G </h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
                 <label for="storage-8">Choisissez la capacité de stockage:</label>
                 <select id="storage-8" class="storage-selector">
@@ -271,15 +299,11 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="google">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/google/google pixel 8 pro.png"
-                        alt="telephone 2"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/google/google pixel 8 pro.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -289,14 +313,11 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
             <div class="product" id="google">
                 <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/google/google pixel.png" alt="telephone 2"
-                        data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+                    <img class="product-card__image main-image" src="./images/google/google pixel.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
                 </div>
                 <h2 class="product-card__title">Samsung Galaxy S23</h2>
                 <p class="product-card__price" id="price">Prix: 999$</p>
@@ -306,9 +327,7 @@
                     <option value="256" data-price="1099">256 Go</option>
                     <option value="512" data-price="1299">512 Go</option>
                 </select>
-                <a class="product-card__button"
-                    href="https://wa.me/+243814264458?text=Здравствуйте! Bonjour! Je voudrais commander un iPhone 14 Pro."
-                    target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <a class="product-card__button" href="https://wa.me/+243814264458?text=Здравствуйте! Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
             </div>
         </section>
         <section class="show-more_container">
@@ -318,82 +337,72 @@
         <section class="about-us" id="about-us">
             <h2 class="section-title">À propos</h2>
             <p>
-                Notre boutique de téléphones portables allie innovation et élégance, vous proposant une sélection
-                exclusive des modèles les plus performants à des prix compétitifs.
-                Engagés envers l'excellence, nous mettons un point d'honneur à offrir à notre clientèle exigeante des
-                produits haut de gamme et un service personnalisé d'exception.
+                Notre boutique de téléphones portables allie innovation et élégance, vous proposant une sélection exclusive des modèles les plus performants à des prix compétitifs. Engagés envers l'excellence, nous mettons un point d'honneur à offrir à notre clientèle
+                exigeante des produits haut de gamme et un service personnalisé d'exception.
             </p>
         </section>
 
         <!-- Секция "Notre adresse" -->
         <section class="contact-address" id="contact-address">
             <h2>Adresse</h2>
-            <p style="padding: 0;">Vous pouvez nous trouver à L’adresse :
-                Galerie Couloir Céleste
-                Jacque Barron 100, Kinshasa Gombe,
-                Rep Dem du Congo.</p>
+            <p style="padding: 0;">Vous pouvez nous trouver à L’adresse : Galerie Couloir Céleste Jacque Barron 100, Kinshasa Gombe, Rep Dem du Congo.</p>
             <p>Reference : Arme du Salut MEMLING</p>
             <div class="opening-hours">
                 <h3>Heures d'ouverture :</h3>
                 <p id="today-hours">
                     Actuellement : <span id="current-time"></span>
                     <span id="status"></span>
-                <table>
-                    <tr>
-                        <td>Lundi</td>
-                        <td>08:00-17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Mardi</td>
-                        <td>08:00-17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Mercredi</td>
-                        <td>08:00-17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Jeudi</td>
-                        <td>08:00-17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Vendredi</td>
-                        <td>08:00-17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Samedi</td>
-                        <td>09:00-16:30</td>
-                    </tr>
-                    <tr>
-                        <td>Dimanche</td>
-                        <td>Fermé</td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr>
+                            <td>Lundi</td>
+                            <td>08:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Mardi</td>
+                            <td>08:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Mercredi</td>
+                            <td>08:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jeudi</td>
+                            <td>08:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Vendredi</td>
+                            <td>08:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Samedi</td>
+                            <td>09:00-16:30</td>
+                        </tr>
+                        <tr>
+                            <td>Dimanche</td>
+                            <td>Fermé</td>
+                        </tr>
+                    </table>
             </div>
         </section>
 
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509255!2d-122.42158368468158!3d37.77492927975933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581cbae233453%3A0x8f47b3b5e8f2476e!2sGolden+Gate+Bridge!5e0!3m2!1sen!2sru!4v1618337848393!5m2!1sen!2sru"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509255!2d-122.42158368468158!3d37.77492927975933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581cbae233453%3A0x8f47b3b5e8f2476e!2sGolden+Gate+Bridge!5e0!3m2!1sen!2sru!4v1618337848393!5m2!1sen!2sru"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         </section>
     </main>
 
     <footer>
         <div class="social-links">
-            <a href="https://facebook.com/https://https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr"
-                target="_blank" aria-label="Facebook">
+            <a href="https://facebook.com/https://https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://wa.me/+243814264458" target="_blank" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://tiktok.com/https://www.tiktok.com/@jekallmobiles?_t=ZM-8vb3xj3mBNf&_r=1" target="_blank"
-                aria-label="TikTok">
+            <a href="https://tiktok.com/https://www.tiktok.com/@jekallmobiles?_t=ZM-8vb3xj3mBNf&_r=1" target="_blank" aria-label="TikTok">
                 <i class="fab fa-tiktok"></i>
             </a>
-            <a href="https://instagram.com/https://www.instagram.com/jekall_mobiles?igsh=ZGMwaGFiYjB1aGV1"
-                target="_blank" aria-label="Instagram">
+            <a href="https://instagram.com/https://www.instagram.com/jekall_mobiles?igsh=ZGMwaGFiYjB1aGV1" target="_blank" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
