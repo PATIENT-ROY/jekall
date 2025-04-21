@@ -955,10 +955,11 @@ footer p {
 /* Мобильные устройства */
 
 @media (max-width: 868px) {
+    #blank,
     #products,
     #about-us,
     #contact-address {
-        scroll-margin-top: 260px;
+        scroll-margin-top: 240px;
         /* Меньше, если хедер компактный */
     }
 }
