@@ -692,28 +692,6 @@ main {
   /* Увеличиваем кнопку при активации */
 }
 
-/* Адаптивность для мобильных устройств */
-.filterButton-show-more {
-  background-color: #ffd700;
-  color: #000;
-  font-weight: bold;
-  border: 2px solid #ffd700;
-  border-radius: 20px;
-  padding: 10px 20px;
-  transition: all 0.3s ease;
-  display: none; /* По умолчанию скрываем кнопку */
-}
-
-.filterButton-show-more:hover {
-  background-color: #ffc000;
-  color: #000;
-}
-
-.filterButton-show-more.active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #fff;
-}
 
 /* Показываем кнопку только на мобильных */
 @media (max-width: 868px) {
@@ -728,6 +706,24 @@ main {
   .mobile-hidden {
     display: none;
   }
+}
+.filterButton-show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+  display: none; /* По умолчанию скрываем кнопку */
+}
+.filterButton-show-more svg,
+.filterButton-show-more img {
+  width: 24px;
+  height: 24px;
 }
 
 */ footer {
