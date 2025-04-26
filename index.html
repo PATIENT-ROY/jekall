@@ -45,6 +45,7 @@
                     <button id="search-button">Rechercher</button>
                 </div>
             </section>
+
             <button class="menu-toggle open-menu" aria-label="Open the menu">☰</button>
             <button class="menu-toggle close-menu" aria-label="Close the menu" style="display: none;">✕</button>
             <nav class="menu">
@@ -77,8 +78,8 @@
                         <p>Accessoires</p>
                     </div>
                     <div class="category">
-                        <img src="images/icon-categories/image-removebg-preview.png" alt="Pochette/Glass" class="icon">
-                        <p>Pochette / Glass</p>
+                        <img src="images/icon-categories/image.png" alt="Tablettes enfants" class="icon">
+                        <p>Tablettes enfants</p>
                     </div>
                 </div>
 
@@ -91,18 +92,22 @@
             <button class="filter-button" data-filter="apple">Apple</button>
             <button class="filter-button" data-filter="samsung">Samsung</button>
             <button class="filter-button" data-filter="xiaomi">Xiaomi</button>
-            <button class="filter-button" data-filter="Android">Android</button>
-            <button class="filter-button" data-filter="google">google</button>
-            <button class="filter-button" data-filter="6Gb 03Y">Redmi</button>
-            <button class="filter-button" data-filter="8Gb 03Y">Oppo</button>
-            <button class="filter-button" data-filter="12Gb 03Y">Vivo</button>
-            <button class="filter-button" data-filter="Itel">Itel</button>
-            <button class="filter-button" data-filter="Realme">Realme</button>
-            <button class="filter-button" data-filter="One Plus">One Plus</button>
-            <button class="filter-button" data-filter="Huawei">Huawei</button>
-            <button class="filter-button" data-filter="Infinix">Infinix</button>
-            <button class="filter-button" data-filter="tekno">tekno</button>
-        </div>
+            <button class="filter-button mobile-hidden" data-filter="android">Android</button>
+            <button class="filter-button mobile-hidden" data-filter="google">google</button>
+            <button class="filter-button mobile-hidden" data-filter="redmi">Redmi</button>
+            <button class="filter-button mobile-hidden" data-filter="oppo">Oppo</button>
+            <button class="filter-button mobile-hidden" data-filter="vivo">Vivo</button>
+            <button class="filter-button mobile-hidden" data-filter="itel">Itel</button>
+            <button class="filter-button mobile-hidden" data-filter="realme">Realme</button>
+            <button class="filter-button mobile-hidden" data-filter="oneplus">One Plus</button>
+            <button class="filter-button mobile-hidden" data-filter="huawei">Huawei</button>
+            <button class="filter-button mobile-hidden" data-filter="infinix">Infinix</button>
+            <button class="filter-button mobile-hidden" data-filter="tekno">tekno</button>
+          
+     
+            <button id="filterButton-show-more" class="filterButton-show-more">Plus</button>
+          </div>
+          
     </div>
     </div>
 
@@ -129,7 +134,7 @@
 
     <main>
         <section class="section-brand" id="blank">
-            <h2>Smartphones</h2>
+            <h2 id="brand-title">Smartphones</h2>
             <div class="brand-grid">
                 <div class="brand-item">
                     <img src="images/brand/iPhone/iphone.png" alt="iPhone">
@@ -393,7 +398,7 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://facebook.com/https://https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://wa.me/+243814264458" target="_blank" aria-label="WhatsApp">
