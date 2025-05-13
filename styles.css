@@ -404,7 +404,6 @@ main {
 .about-us {
   /* background-color: var(--primary-color); */
   background: linear-gradient(45deg, 
-  #ff0000 0%,    /* Красный */
   #ffcc00 50%,   /* Жёлтый */
   #ffffff 100%   /* Белый */
 );
@@ -418,7 +417,6 @@ background-attachment: fixed;
   padding: 60px 20px;
   /* background-color: var(--background-color); */
     background: linear-gradient(45deg, 
-  #ff0000 0%,    /* Красный */
   #ffcc00 50%,   /* Жёлтый */
   #ffffff 100%   /* Белый */
 );
