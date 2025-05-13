@@ -35,16 +35,32 @@
         <div class="header_container">
             <div class="logo">
                 <a href="#" onclick="window.location.reload(); return false;">
-                    <img src="images/favicon/web-app-manifest-192x192.png" alt="Ets Jekall">
-                    <h1>Jekall Mobiles</h1>
+                    <img src="images/favicon/favicon.svg" alt="Ets Jekall">
+                    <h1 class="logo_title">Jekall Mobiles</h1>
                 </a>
             </div>
             <section class="catalog">
                 <div class="search">
-                    <input type="text" placeholder="Trouver des produits">
-                    <button id="search-button">Rechercher</button>
+                  <input type="text" placeholder="Trouver des produits" />
+              
+                  <!-- Кнопка для десктопа -->
+                  <button id="search-button" class="btn-desktop">
+                    🔍 Rechercher
+                  </button>
+              
+                  <!-- Кнопка-иконка для мобильных -->
+                  <button id="search-button-icon" class="btn-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                         fill="none" stroke="currentColor" stroke-linecap="round" 
+                         stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                      <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                      <path d="M21 21l-6 -6"></path>
+                    </svg>
+                  </button>
                 </div>
-            </section>
+              </section>
+              
+              
 
             <button class="menu-toggle open-menu" aria-label="Open the menu">☰</button>
             <button class="menu-toggle close-menu" aria-label="Close the menu" style="display: none;">✕</button>

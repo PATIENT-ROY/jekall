@@ -1,3 +1,4 @@
+
 :root {
   --primary-color: #fce000;
   --hover-color: #ffc000;
@@ -88,7 +89,9 @@ main {
   transform: scale(1.1);
   /* Лёгкое увеличение при наведении */
 }
-
+.logo_title{
+  color: var(--background-color);
+}
 @media (max-width: 868px) {
   .logo h1 {
     font-size: 1.2rem;
@@ -108,14 +111,13 @@ main {
 .search {
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  align-items: center;
-  width: 100%;
+  justify-content: space-between;
   max-width: 600px;
-  margin-inline: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  overflow: hidden;
+  margin: 40px auto;
+  padding: 6px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 4px 12px var(--hover-color);
 }
 
 .search img {
@@ -125,12 +127,17 @@ main {
 }
 
 .search input {
-  padding: 10px;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
   font-size: 16px;
-  border: 1px solid var(--primary-color);
-  border-radius: 5px;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  /* Плавные изменения */
+  border-radius: 40px;
+  background-color: transparent;
+}
+.search input::placeholder {
+  color: #888;
+  opacity: 0.8;
 }
 
 .search input:focus {
@@ -142,19 +149,24 @@ main {
   /* Мягкая тень */
 }
 
-.search button {
-  padding: 10px 20px;
-  font-size: 16px;
+
+.btn-mobile {
+  display: none;
+}
+
+.btn-desktop {
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
-  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 40px;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 .search button:hover {
   background-color: var(--hover-color);
+  transform: translateY(-2px);
 }
 
 .menu ul {
@@ -232,6 +244,25 @@ main {
   /* Плавное переключение */
   user-select: none;
   -webkit-user-drag: none;
+}
+@media (max-width: 868px) {
+  .btn-desktop {
+    display: none !important;
+  }
+  .btn-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-mobile svg {
+    stroke: var(--text-color);
+  }
 }
 
 @media (max-width: 868px) {
@@ -330,6 +361,7 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin: 25px;
   }
   .search button {
     margin-left: 0;
@@ -339,9 +371,6 @@ main {
     margin: 12px auto;
     max-width: 200px;
     /* Уменьшаем размер на мобильных устройствах */
-  }
-  .search {
-    width: 100%;
   }
   .search input {
     flex: 1;
