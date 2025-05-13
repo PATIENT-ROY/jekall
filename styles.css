@@ -4,7 +4,7 @@
   --background-color: #fff;
   --light-background: #f8f8f8;
   --text-color: #333;
-  --text-error-color: #ff4d4d;
+  --text-error-color: red;
 }
 
 body {
@@ -12,6 +12,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--light-background);
+
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -400,14 +402,28 @@ main {
 /* Общие стили для секций */
 
 .about-us {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background: linear-gradient(45deg, 
+  #ff0000 0%,    /* Красный */
+  #ffcc00 50%,   /* Жёлтый */
+  #ffffff 100%   /* Белый */
+);
+background-size: cover;
+background-attachment: fixed;
   padding: 60px 20px;
   text-align: center;
 }
 
 .contact-address {
   padding: 60px 20px;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+    background: linear-gradient(45deg, 
+  #ff0000 0%,    /* Красный */
+  #ffcc00 50%,   /* Жёлтый */
+  #ffffff 100%   /* Белый */
+);
+background-size: cover;
+background-attachment: fixed;
   text-align: center;
 }
 
@@ -421,7 +437,7 @@ main {
 .about-us p,
 .contact-address p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-color);
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.6;
@@ -692,6 +708,8 @@ main {
   /* Увеличиваем кнопку при активации */
 }
 
+/* Адаптивность для мобильных устройств */
+
 
 /* Показываем кнопку только на мобильных */
 @media (max-width: 868px) {
@@ -726,7 +744,7 @@ main {
   height: 24px;
 }
 
-*/ footer {
+footer {
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -781,7 +799,7 @@ footer p {
 
 #today-schedule {
   margin-left: 10px;
-  color: #666;
+  color: var(--text-color);
   /* Серый цвет для графика работы */
 }
 

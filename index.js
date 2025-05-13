@@ -319,7 +319,7 @@ function getTodayStatus() {
                 currentTime >= todayHours.start && currentTime < todayHours.end;
             statusElement.textContent = isOpen ? "С'est Ouverte" : "C'est Ferme";
             statusElement.style.color = isOpen ?
-                "var(--primary-color)" :
+                "var(--text-error-color)" :
                 "var(--text-error-color)";
         } else {
             statusElement.textContent = "Закрыто";
