@@ -113,7 +113,7 @@ main {
   align-items: center;
   justify-content: space-between;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 6px;
   background: #fff;
   border-radius: 40px;
@@ -694,7 +694,7 @@ background-attachment: fixed;
   background-color: var(--background-color);
   padding: 10px 20px;
   border-bottom: 1px solid #ddd;
-  margin-top: 90px;
+  margin-top: 125px;
 }
 
 .filters-container {
@@ -881,7 +881,7 @@ footer p {
 
 @media (max-width: 768px) {
   .filters {
-    padding-top: 120px;
+    padding-top: 100px;
   }
 }
 
