@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {});
 
+
+// const currentPath = window.location.pathname;
+//   const links = document.querySelectorAll(".nav-link");
+
+//   links.forEach(link => {
+//     if (link.getAttribute("href") === currentPath) {
+//       link.classList.add("active");
+//     }
+//   });
 function resetPage() {
     window.location.reload(); // Или сброс полей вручную
 }
@@ -518,3 +527,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.querySelectorAll(".category").forEach(category => {
+    category.addEventListener("click", () => {
+      const selectedCategory = category.dataset.category;
+  
+      // Сброс активного класса
+      document.querySelectorAll(".category").forEach(cat => cat.classList.remove("active"));
+      category.classList.add("active");
+  
+      // Фильтрация товаров
+      document.querySelectorAll(".product").forEach(product => {
+        const productCategory = product.dataset.category;
+        product.style.display = (productCategory === selectedCategory) ? "block" : "none";
+      });
+    });
+  });
+  

@@ -39,34 +39,34 @@
                     <h1 class="logo_title">Jekall Mobiles</h1>
                 </a>
             </div>
-            <section class="catalog">
-                <div class="search">
-                  <input type="text" placeholder="Trouver des produits" />
-              
-                  <!-- Кнопка для десктопа -->
-                  <button id="search-button" class="btn-desktop">
-                    🔍 Rechercher
-                  </button>
-              
-                  <!-- Кнопка-иконка для мобильных -->
-                  <button id="search-button-icon" class="btn-mobile">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                         fill="none" stroke="currentColor" stroke-linecap="round" 
-                         stroke-linejoin="round" width="24" height="24" stroke-width="2">
-                      <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-                      <path d="M21 21l-6 -6"></path>
-                    </svg>
-                  </button>
-                </div>
-              </section>
-              
+           <section class="catalog">
+  <div class="search">
+    <input type="text" placeholder="Trouver des produits" />
+
+    <!-- Кнопка для десктопа -->
+    <button id="search-button" class="btn-desktop">
+      🔍 Rechercher
+    </button>
+
+    <!-- Кнопка-иконка для мобильных -->
+    <button id="search-button-icon" class="btn-mobile">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+           fill="none" stroke="currentColor" stroke-linecap="round" 
+           stroke-linejoin="round" width="24" height="24" stroke-width="2">
+        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+        <path d="M21 21l-6 -6"></path>
+      </svg>
+    </button>
+  </div>
+</section>
+
               
 
             <button class="menu-toggle open-menu" aria-label="Open the menu">☰</button>
             <button class="menu-toggle close-menu" aria-label="Close the menu" style="display: none;">✕</button>
             <nav class="menu">
                 <ul>
-                    <li><a href="#blank" class="nav-link">Catalogue</a></li>
+                    <li><a href="#categories"  class="nav-link">Catalogue</a></li>
                     <li><a href="#about-us" class="nav-link">À propos</a></li>
                     <li><a href="#contact-address" class="nav-link">Adresse</a></li>
                 </ul>
@@ -83,50 +83,8 @@
                 <header class="header-container">
                     <h1 class="header-container_title">Le Prix s'oublie mais la <span class="highlight">Qualité</span> reste et assure.</h1>
                 </header>
-
-                <div class="categories">
-                    <div class="category">
-                        <img src="images/icon-categories/i-removebg-preview.png" alt="Smartphones" class="icon">
-                        <p>Smartphones</p>
-                    </div>
-                    <div class="category">
-                        <img src="images/icon-categories/accessories-icon.png" alt="Accessoires" class="icon">
-                        <p>Accessoires</p>
-                    </div>
-                    <div class="category">
-                        <img src="images/icon-categories/image.png" alt="Tablettes enfants" class="icon">
-                        <p>Tablettes enfants</p>
-                    </div>
-                </div>
-
-                <div class="title-contaire">
-                    <h2 class="title-contaire_category">Nos Marques :</h2>
-                </div>
             </div>
         </div>
-        <div class="filters-container">
-            <button class="filter-button" data-filter="apple">Apple</button>
-            <button class="filter-button" data-filter="samsung">Samsung</button>
-            <button class="filter-button" data-filter="xiaomi">Xiaomi</button>
-            <button class="filter-button mobile-hidden" data-filter="android">Android</button>
-            <button class="filter-button mobile-hidden" data-filter="google">google</button>
-            <button class="filter-button mobile-hidden" data-filter="redmi">Redmi</button>
-            <button class="filter-button mobile-hidden" data-filter="oppo">Oppo</button>
-            <button class="filter-button mobile-hidden" data-filter="vivo">Vivo</button>
-            <button class="filter-button mobile-hidden" data-filter="itel">Itel</button>
-            <button class="filter-button mobile-hidden" data-filter="realme">Realme</button>
-            <button class="filter-button mobile-hidden" data-filter="oneplus">One Plus</button>
-            <button class="filter-button mobile-hidden" data-filter="huawei">Huawei</button>
-            <button class="filter-button mobile-hidden" data-filter="infinix">Infinix</button>
-            <button class="filter-button mobile-hidden" data-filter="tekno">tekno</button>
-          
-     
-            <button id="filterButton-show-more" class="filterButton-show-more">
-                <img src="images/icon-categories/plus-circle.svg" alt="Show more" width="24" height="24">
-              </button>
-              
-          </div>
-          
     </div>
     </div>
 
@@ -150,9 +108,34 @@
             </div>
         </div>
     </section>
+    
 
     <main>
-        <section class="section-brand" id="blank">
+        <section class="categories-section" id="categories">
+            <div class="categories-header">
+              <h2>Nos Catégories</h2>
+              <a href="/categories.html" class="see-all">Voir tout &rsaquo;</a>
+            </div>
+          
+            <div class="categories">
+              <div class="category">
+                <img src="images/icon-categories/i-removebg-preview.png" alt="Smartphones" class="icon" />
+                <p>Smartphones</p>
+              </div>
+              <div class="category">
+                <img src="images/icon-categories/accessories-icon.png" alt="Accessoires" class="icon" />
+                <p>Accessoires</p>
+              </div>
+              <div class="category">
+                <img src="images/icon-categories/image.png" alt="Tablettes enfants" class="icon" />
+                <p>Tablettes enfants</p>
+              </div>
+            </div>
+          </section>
+          
+
+
+        <!-- <section class="section-brand" id="blank">
             <h2 id="brand-title">Smartphones</h2>
             <div class="brand-grid">
                 <div class="brand-item">
@@ -200,13 +183,19 @@
                     <p>Tecno</p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
         <section class="message_container">
             <div class="no_results_message" id="no-results-message">
                 Désolé, aucun produit trouvé.
             </div>
+        </section>
+        <section class="categories-section">
+            <div class="categories-header">
+                <h2>Produits Populaires</h2>
+                <a href="/categories.html" class="see-all">Voir tout &rsaquo;</a>
+              </div>
         </section>
         <section class="products" id="products">
             <div class="product" id="apple">
@@ -413,25 +402,102 @@
             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         </section>
+
+        <section class="features">
+            <h2 class="features-title">Pourquoi Nous Choisir?</h2>
+            <div class="features-list">
+              <div class="feature-item">
+                <div class="icon-circle">
+                  <img src="icons/badge.svg" alt="Authentique">
+                </div>
+                <h3>Produits Authentiques</h3>
+                <p>Tous nos produits sont 100% authentiques et disposent d'une garantie officielle.</p>
+              </div>
+          
+              <div class="feature-item">
+                <div class="icon-circle">
+                  <img src="icons/shield.svg" alt="Sécurité">
+                </div>
+                <h3>Paiement Sécurisé</h3>
+                <p>Plusieurs options de paiement sécurisées disponibles pour votre tranquillité.</p>
+              </div>
+          
+              <div class="feature-item">
+                <div class="icon-circle">
+                  <img src="icons/delivery.svg" alt="Livraison">
+                </div>
+                <h3>Livraison Rapide</h3>
+                <p>Livraison rapide et fiable partout à Kinshasa, suivi en temps réel.</p>
+              </div>
+            </div>
+          </section>
+          
     </main>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://wa.me/+243814264458" target="_blank" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://tiktok.com/https://www.tiktok.com/@jekallmobiles?_t=ZM-8vb3xj3mBNf&_r=1" target="_blank" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://instagram.com/https://www.instagram.com/jekall_mobiles?igsh=ZGMwaGFiYjB1aGV1" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
+    <footer class="footer">
+        <div class="footer-container">
+      
+          <!-- БЛОК 1: Бренд и соцсети -->
+          <div class="footer-block brand">
+            <h3><img src="images/favicon/favicon.ico" alt="icon" class="footer-icon"> Jekall Mobiles</h3>
+            <p>Votre destination premium pour les smartphones et accessoires mobiles de qualité à des prix compétitifs.</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/+243814264458" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://tiktok.com/https://www.tiktok.com/@jekallmobiles?_t=ZM-8vb3xj3mBNf&_r=1" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://instagram.com/https://www.instagram.com/jekall_mobiles?igsh=ZGMwaGFiYjB1aGV1" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+          </div>
+      
+          <!-- БЛОК 2: Контакты -->
+          <div class="footer-block contact">
+            <h3>Contact</h3>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Galerie Couloir Céleste<br>Jacque Barron 100,<br>Kinshasa Gombe, Rep Dem du Congo</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <p>+243 814 264 458</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <p>contact@jekallmobiles.com</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <p>Lun - Ven: 08:00 - 17:00<br>Sam: 09:00 - 16:30</p>
+            </div>
+          </div>
+      
+          <!-- БЛОК 3: Категории -->
+          <div class="footer-block links">
+            <h3>Catégories</h3>
+            <ul>
+              <li><i class="fas fa-angle-right"></i> Smartphones</li>
+              <li><i class="fas fa-angle-right"></i> Accessoires</li>
+              <li><i class="fas fa-angle-right"></i> Tablettes enfants</li>
+              <li><i class="fas fa-angle-right"></i> Pourquoi Nous</li>
+              <li><i class="fas fa-angle-right"></i> Contact</li>
+            </ul>
+          </div>
+      
         </div>
-        <p>&copy; <span id="year"></span> Jekall Mobiles. Tous droits réservés.</p>
-    </footer>
+      
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> Jekall Mobiles. Tous droits réservés.</p>
+        </div>
+      </footer>
+      
+      
 
     <button id="back-to-top" class="back-to-top" aria-label="Наверх">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
