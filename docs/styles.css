@@ -71,7 +71,6 @@ main {
   display: flex;
   align-items: center;
   gap: 15px;
-  /* Увеличенное расстояние между логотипом и текстом */
   text-decoration: none;
   color: #ccc;
   font-size: 12px;
@@ -79,18 +78,15 @@ main {
 
 .logo img {
   width: 65px;
-  /* Увеличен размер для лучшей видимости */
   height: 65px;
   border-radius: 50%;
-  /* Закругление для создания иконки */
+  box-shadow: 0 4px 12px var(--hover-color);
   transition: transform 0.3s ease;
-  /* Анимация на наведение */
   object-fit: contain;
 }
 
 .logo img:hover {
   transform: scale(1.1);
-  /* Лёгкое увеличение при наведении */
 }
 .logo_title{
   color: var(--background-color);
@@ -98,11 +94,9 @@ main {
 @media (max-width: 868px) {
   .logo h1 {
     font-size: 1.2rem;
-    /* Уменьшение текста на мобильных устройствах */
   }
   .logo img {
     width: 50px;
-    /* Адаптация размера изображения */
     height: 50px;
   }
 }
@@ -115,6 +109,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   max-width: 600px;
   margin: 20px auto;
   padding: 6px;
@@ -145,11 +140,8 @@ main {
 
 .search input:focus {
   outline: none;
-  /* Убираем стандартный контур */
   border-color: var(--hover-color);
-  /* Новый цвет рамки */
-  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
-  /* Мягкая тень */
+  box-shadow: 0 0 0 2px var(--text-error-color);
 }
 
 
@@ -348,6 +340,12 @@ main {
   font-size: 28px;
   font-weight: 700;
 }
+@media screen and (max-width: 480px) {
+  .section-header h2 {
+    font-size: 24px;
+  }
+  
+}
 
 .see-all {
   color: #4A60FF;
@@ -423,12 +421,12 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #25D366;
+  background-color: var(--primary-color);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   font-size: 22px;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   transition: background 0.3s ease;
 }
@@ -623,6 +621,7 @@ background-attachment: fixed;
 
 /* Стили для блока с графиком работы */
 .opening-hours-box {
+  width: 80%;
   background-color: #fff;
   border-radius: 16px;
   padding: 24px;
@@ -877,6 +876,7 @@ background-attachment: fixed;
   
   .filters-container {
     gap: 8px;
+    padding: 16px;
   }
   
   .mobile-hidden {
@@ -892,7 +892,7 @@ background-attachment: fixed;
   cursor: pointer;
   color: #000;
   font-weight: bold;
-  background-color: var(--background-color);
+  background-color: var(--light-background);
   transition: all 0.3s ease;
   display: none; /* По умолчанию скрываем кнопку */
 }
@@ -1068,6 +1068,7 @@ background-attachment: fixed;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
+  scroll-margin-top: 240px;
 }
 
 .categories-header {
@@ -1081,6 +1082,12 @@ background-attachment: fixed;
   font-size: 28px;
   font-weight: 700;
   color: #000;
+}
+@media screen and (max-width: 480px) {
+  .categories-header h2 {
+    font-size: 24px;
+  }
+  
 }
 
 .see-all {
@@ -1507,6 +1514,12 @@ html {
   font-weight: 700;
   margin-bottom: 40px;
   color: #000;
+}
+@media screen and (max-width: 480px) {
+  .features-title {
+    font-size: 24px;
+  }
+  
 }
 
 .features-list {
