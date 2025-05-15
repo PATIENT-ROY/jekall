@@ -8,6 +8,7 @@ html {
   --background-color: #fff;
   --light-background: #f8f8f8;
   --text-color: #333;
+  --text-color-black: #111827;
   --text-error-color: red;
 }
 
@@ -339,6 +340,7 @@ main {
 .section-header h2 {
   font-size: 28px;
   font-weight: 700;
+  color: var(--text-color-black);
 }
 @media screen and (max-width: 480px) {
   .section-header h2 {
@@ -556,7 +558,7 @@ background-attachment: fixed;
 .about-us h2,
 .contact-address h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--text-color-black);
   margin-bottom: 20px;
 }
 
@@ -639,6 +641,7 @@ background-attachment: fixed;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
+  color: var(--text-color-black);
 }
 
 .hours-list {
@@ -927,9 +930,6 @@ background-attachment: fixed;
   font-size: 18px;
   color: #fff;
   margin-bottom: 16px;
-  border-bottom: 2px solid var(--text-error-color);
-  display: inline-block;
-  padding-bottom: 4px;
 }
 
 .footer-block p {
@@ -1054,7 +1054,7 @@ background-attachment: fixed;
 
 .header-container_title {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-color-black);
   margin-bottom: 20px;
 }
 
@@ -1081,13 +1081,12 @@ background-attachment: fixed;
 .categories-header h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #000;
+  color:var(--text-color-black);
 }
 @media screen and (max-width: 480px) {
   .categories-header h2 {
     font-size: 24px;
   }
-  
 }
 
 .see-all {
@@ -1513,7 +1512,7 @@ html {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #000;
+  color: var(--text-color-black);
 }
 @media screen and (max-width: 480px) {
   .features-title {

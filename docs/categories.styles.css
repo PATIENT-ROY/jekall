@@ -4,6 +4,7 @@
     --background-color: #fff;
     --light-background: #f8f8f8;
     --text-color: #333;
+    --text-color-black: #111827;
     --text-error-color: red;
   }
 
@@ -14,10 +15,17 @@
   }
   
   .catalogue-intro h1 {
+    color: var(--text-color-black);
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 10px;
     margin-top: 150px;
+  }
+  @media screen and (max-width: 480px) {
+    .catalogue-intro h1 {
+      font-size: 24px;
+    }
+    
   }
   
   .catalogue-intro p {
@@ -34,6 +42,7 @@
   }
   
   .categories-section h2 {
+    color: var(--text-color-black);
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
