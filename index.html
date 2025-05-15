@@ -24,6 +24,7 @@
     <meta property="twitter:image" content="https://jekallmobiles.com/images/og-image.jpg">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" href="images/favicon/favicon.ico" type="image/png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -133,219 +134,81 @@
             </div>
           </section>
           
-
-
-        <!-- <section class="section-brand" id="blank">
-            <h2 id="brand-title">Smartphones</h2>
-            <div class="brand-grid">
-                <div class="brand-item">
-                    <img src="images/brand/iPhone/iphone.png" alt="iPhone">
-                    <p>iPhone</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Samsung/samsung.png" alt="Samsung">
-                    <p>Samsung</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Google Pixel/google pixel.png" alt="Google Pixel">
-                    <p>Google Pixel</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/One plus/one plus.png" alt="One Plus">
-                    <p>One Plus</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Poco/poco.png" alt="Poco">
-                    <p>Poco</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Xiaomi/xiomi.png" alt="Xiaomi">
-                    <p>Xiaomi</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Huawei/huawei.png" alt="Huawei">
-                    <p>Huawei</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Honor/honor.png" alt="Honor">
-                    <p>Honor</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Infinix/infinix.png" alt="Infinix">
-                    <p>Infinix</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Realme/realme.png" alt="Realme">
-                    <p>Realme</p>
-                </div>
-                <div class="brand-item">
-                    <img src="images/brand/Tecno/tecno.png" alt="Tecno">
-                    <p>Tecno</p>
-                </div>
-            </div>
-        </section> -->
-
-
         <section class="message_container">
             <div class="no_results_message" id="no-results-message">
                 Désolé, aucun produit trouvé.
             </div>
         </section>
-        <section class="categories-section">
-            <div class="categories-header">
-                <h2>Produits Populaires</h2>
-                <a href="/categories.html" class="see-all">Voir tout &rsaquo;</a>
+        <section class="popular-products">
+            <div class="section-header">
+              <h2>Produits Populaires</h2>
+              <a href="/categories.html" class="see-all">Voir tout &rsaquo;</a>
+            </div>
+          
+            <div class="product-grid">
+              <div class="product-card">
+                <img src="images/Apple/apple1.png" alt="iPhone 14 Pro">
+                <h3>iPhone 14 Pro</h3>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="score">4.9</span>
+                  <span class="reviews">(128 avis)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="price">$999</p>
+                    <a class="whatsapp-btn" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
               </div>
-        </section>
-        <section class="products" id="products">
-            <div class="product" id="apple">
-                <div class="image-container">
-                    <img src="./images/Apple/apple1.png" alt="telephone 1" class="product-card__image main-image" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+          
+              <div class="product-card">
+                <img src="images/Samsung/samsung1.png" alt="Samsung Galaxy S23">
+                <h3>Samsung Galaxy S23</h3>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="score">4.8</span>
+                  <span class="reviews">(96 avis)</span>
                 </div>
-                <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="price">$879</p>
+                    <a class="whatsapp-btn" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a></div>
+              </div>
+          
+              <div class="product-card">
+                <img src="images/google/google pixel 8 pro.png" alt="Google Pixel 8 Pro">
+                <h3>Google Pixel 8 Pro</h3>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="score">4.7</span>
+                  <span class="reviews">(85 avis)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="price">$899</p>
+                    <a class="whatsapp-btn" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a></div>
+              </div>
 
-                <label for="storage-1">Choisissez la capacité de stockage:</label>
-                <select id="storage-1" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank">
-                    <i class="fab fa-whatsapp"></i>Commander via WhatsApp
-                </a>
-            </div>
-            <div class="product" id="apple">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Apple/apple2.png" alt="telephone 1" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
+              <div class="product-card">
+                <img src="images/Xiaomi/Xiaomi1.png" alt="Xiaomi 13">
+                <h3>Xiaomi 13</h3>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="score">4.6</span>
+                  <span class="reviews">(72 avis)</span>
                 </div>
-                <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-2">Choisissez la capacité de stockage:</label>
-                <select id="storage-2" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="price">$599</p>
+                    <a class="whatsapp-btn" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a></div>
+              </div>
             </div>
-            <div class="product" id="apple">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Apple/apple3.png" alt="telephone 1" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-3">Choisissez la capacité de stockage:</label>
-                <select id="storage-3" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1000,99">256 Go</option>
-                    <option value="512" data-price="1299,45">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="apple">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Apple/apple4.png" alt="telephone 1" data-images='["../images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-4">Choisissez la capacité de stockage:</label>
-                <select id="storage-4" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="xiaomi">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Xiaomi/Xiaomi1.png" alt="telephone 1" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">iPhone 14 Pro</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-5">Choisissez la capacité de stockage:</label>
-                <select id="storage-5" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="Xiaomi">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Xiaomi/Xiaomi2.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">Xiaomi 3</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-6">Choisissez la capacité de stockage:</label>
-                <select id="storage-6" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="Samsung">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Samsung/samsung1.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-7">Choisissez la capacité de stockage:</label>
-                <select id="storage-7" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="samsung">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/Samsung/samsung1.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">Samsung Galaxy Smartphone A56 5G </h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-8">Choisissez la capacité de stockage:</label>
-                <select id="storage-8" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="google">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/google/google pixel 8 pro.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-9">Choisissez la capacité de stockage:</label>
-                <select id="storage-9" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-            <div class="product" id="google">
-                <div class="image-container">
-                    <img class="product-card__image main-image" src="./images/google/google pixel.png" alt="telephone 2" data-images='["./images/Apple/apple2.png", "./images/Apple/apple3.png", "./images/Apple/apple4.png"]'>
-                </div>
-                <h2 class="product-card__title">Samsung Galaxy S23</h2>
-                <p class="product-card__price" id="price">Prix: 999$</p>
-                <label for="storage-10">Choisissez la capacité de stockage:</label>
-                <select id="storage-10" class="storage-selector">
-                    <option value="128" data-price="999">128 Go</option>
-                    <option value="256" data-price="1099">256 Go</option>
-                    <option value="512" data-price="1299">512 Go</option>
-                </select>
-                <a class="product-card__button" href="https://wa.me/+243814264458?text=Здравствуйте! Bonjour! Je voudrais commander un iPhone 14 Pro." target="_blank"><i class="fab fa-whatsapp"></i>Commander via WhatsApp</a>
-            </div>
-        </section>
-        <section class="show-more_container">
-            <button id="show-more" class="show-more-button">Afficher plus...</button>
-        </section>
+          </section>
+          
         <!-- Секция "О нас" -->
         <section class="about-us" id="about-us">
             <h2 class="section-title">À propos</h2>
@@ -357,45 +220,32 @@
 
         <!-- Секция "Notre adresse" -->
         <section class="contact-address" id="contact-address">
-            <h2>Adresse</h2>
-            <p style="padding: 0;">Vous pouvez nous trouver à L’adresse : Galerie Couloir Céleste Jacque Barron 100, Kinshasa Gombe, Rep Dem du Congo.</p>
-            <p>Reference : Arme du Salut MEMLING</p>
-            <div class="opening-hours">
-                <h3>Heures d'ouverture :</h3>
-                <p id="today-hours">
-                    Actuellement : <span id="current-time"></span>
-                    <span id="status"></span>
-                    <table>
-                        <tr>
-                            <td>Lundi</td>
-                            <td>08:00-17:00</td>
-                        </tr>
-                        <tr>
-                            <td>Mardi</td>
-                            <td>08:00-17:00</td>
-                        </tr>
-                        <tr>
-                            <td>Mercredi</td>
-                            <td>08:00-17:00</td>
-                        </tr>
-                        <tr>
-                            <td>Jeudi</td>
-                            <td>08:00-17:00</td>
-                        </tr>
-                        <tr>
-                            <td>Vendredi</td>
-                            <td>08:00-17:00</td>
-                        </tr>
-                        <tr>
-                            <td>Samedi</td>
-                            <td>09:00-16:30</td>
-                        </tr>
-                        <tr>
-                            <td>Dimanche</td>
-                            <td>Fermé</td>
-                        </tr>
-                    </table>
-            </div>
+            <div class="opening-hours-box">
+                <div class="header-icon">
+                  <img src="images/icons-socialmedia/map-pin-svgrepo-com.svg" alt="map icon" />
+                </div>
+                <h3>Adresse</h3>
+                <p style="padding: 0;">Vous pouvez nous trouver à l’adresse :<br>
+                  Galerie Couloir Céleste, Jacque Barron 100,<br>
+                  Kinshasa Gombe, Rep Dem du Congo.</p>
+                <p><strong>Référence :</strong> Arme du Salut MEMLING</p>
+                <a href="#" class="map-link">📍 Voir l'itinéraire</a>
+              </div>
+              
+            <div class="opening-hours-box">
+                <div class="header-icon">
+                  <img src="images/icons-socialmedia/calendar-check-svgrepo-com.svg" alt="calendar icon" />
+                </div>
+                <h3>Heures d'ouverture</h3>
+              
+                <ul id="hours-list" class="hours-list"></ul>
+              
+                <div class="status-block">
+                  <p><i class="fas fa-clock"></i> Heures actuelles: <span id="current-time">--:--</span></p>
+                  <p>Statut: <span id="status" class="status-badge">...</span></p>
+                </div>
+              </div>
+              
         </section>
 
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509255!2d-122.42158368468158!3d37.77492927975933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581cbae233453%3A0x8f47b3b5e8f2476e!2sGolden+Gate+Bridge!5e0!3m2!1sen!2sru!4v1618337848393!5m2!1sen!2sru"
@@ -408,7 +258,7 @@
             <div class="features-list">
               <div class="feature-item">
                 <div class="icon-circle">
-                  <img src="icons/badge.svg" alt="Authentique">
+                  <img src="images/icons-socialmedia/badge-svgrepo-com.svg" alt="Authentique">
                 </div>
                 <h3>Produits Authentiques</h3>
                 <p>Tous nos produits sont 100% authentiques et disposent d'une garantie officielle.</p>
@@ -416,18 +266,10 @@
           
               <div class="feature-item">
                 <div class="icon-circle">
-                  <img src="icons/shield.svg" alt="Sécurité">
+                  <img src="images/icons-socialmedia/shield-check-svgrepo-com.svg"Sécurité">
                 </div>
                 <h3>Paiement Sécurisé</h3>
                 <p>Plusieurs options de paiement sécurisées disponibles pour votre tranquillité.</p>
-              </div>
-          
-              <div class="feature-item">
-                <div class="icon-circle">
-                  <img src="icons/delivery.svg" alt="Livraison">
-                </div>
-                <h3>Livraison Rapide</h3>
-                <p>Livraison rapide et fiable partout à Kinshasa, suivi en temps réel.</p>
               </div>
             </div>
           </section>
@@ -442,16 +284,16 @@
             <h3><img src="images/favicon/favicon.ico" alt="icon" class="footer-icon"> Jekall Mobiles</h3>
             <p>Votre destination premium pour les smartphones et accessoires mobiles de qualité à des prix compétitifs.</p>
             <div class="footer-socials">
-                <a href="https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                <a class="social-link-fb" href="https://www.facebook.com/share/16TBiBjw7F/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://wa.me/+243814264458" target="_blank" aria-label="WhatsApp">
+                <a class="social-link-wa" href="https://wa.me/+243814264458" target="_blank" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://tiktok.com/https://www.tiktok.com/@jekallmobiles?_t=ZM-8vb3xj3mBNf&_r=1" target="_blank" aria-label="TikTok">
+                <a class="social-link-tt" href="https://tiktok.com/https://www.tiktok.com/@jekallmobiles?_t=ZM-8vb3xj3mBNf&_r=1" target="_blank" aria-label="TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://instagram.com/https://www.instagram.com/jekall_mobiles?igsh=ZGMwaGFiYjB1aGV1" target="_blank" aria-label="Instagram">
+                <a class="social-link-ig" href="https://instagram.com/https://www.instagram.com/jekall_mobiles?igsh=ZGMwaGFiYjB1aGV1" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -484,9 +326,7 @@
             <ul>
               <li><i class="fas fa-angle-right"></i> Smartphones</li>
               <li><i class="fas fa-angle-right"></i> Accessoires</li>
-              <li><i class="fas fa-angle-right"></i> Tablettes enfants</li>
-              <li><i class="fas fa-angle-right"></i> Pourquoi Nous</li>
-              <li><i class="fas fa-angle-right"></i> Contact</li>
+              <li><i class="fas fa-angle-right"></i> Tablettes enfants</li>        
             </ul>
           </div>
       
@@ -497,8 +337,6 @@
         </div>
       </footer>
       
-      
-
     <button id="back-to-top" class="back-to-top" aria-label="Наверх">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
@@ -510,5 +348,4 @@
 
     <script src="index.js"></script>
 </body>
-
 </html>

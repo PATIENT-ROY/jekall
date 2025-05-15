@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {});
 
 
-// const currentPath = window.location.pathname;
-//   const links = document.querySelectorAll(".nav-link");
+const currentPath = window.location.pathname;
+  const links = document.querySelectorAll(".nav-link");
 
-//   links.forEach(link => {
-//     if (link.getAttribute("href") === currentPath) {
-//       link.classList.add("active");
-//     }
-//   });
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
 function resetPage() {
     window.location.reload(); // Или сброс полей вручную
 }
@@ -289,84 +289,58 @@ if (trailerContainer && totalSlides > 0) {
     });
 }
 // График работы
-const openingHours = [
-    { day: "Воскресенье", hours: "закрыто", open: false }, // 0
-    { day: "Понедельник", hours: "08:00-17:00", open: true, start: 8, end: 17 }, // 1
-    { day: "Вторник", hours: "08:00-17:00", open: true, start: 8, end: 17 }, // 2
-    { day: "Среда", hours: "08:00-17:00", open: true, start: 8, end: 17 }, // 3
-    { day: "Четверг", hours: "08:00-17:00", open: true, start: 8, end: 17 }, // 4
-    { day: "Пятница", hours: "08:00-17:00", open: true, start: 8, end: 17 }, // 5
-    { day: "Суббота", hours: "09:00-16:30", open: true, start: 9, end: 16.5 }, // 6
+const days = [
+    { name: "Dimanche", hours: "Fermé", open: false },
+    { name: "Lundi", hours: "08:00-17:00", open: true, start: 8, end: 17 },
+    { name: "Mardi", hours: "08:00-17:00", open: true, start: 8, end: 17 },
+    { name: "Mercredi", hours: "08:00-17:00", open: true, start: 8, end: 17 },
+    { name: "Jeudi", hours: "08:00-17:00", open: true, start: 8, end: 17 },
+    { name: "Vendredi", hours: "08:00-17:00", open: true, start: 8, end: 17 },
+    { name: "Samedi", hours: "09:00-16:30", open: true, start: 9, end: 16.5 } // 16:30 = 16.5
 ];
 
-// Функция для обновления текущего времени
-function updateCurrentTime() {
+function updateOpeningHours() {
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
-    const currentTimeElement = document.getElementById("current-time");
+    const currentDay = now.getDay();
+    const today = days[currentDay]; // ← важно!
 
-    if (currentTimeElement) {
-        currentTimeElement.textContent = `${hours}:${minutes}`;
-    } else {
-        console.error("Элемент #current-time не найден.");
+    const currentTime = now.getHours() + now.getMinutes() / 60;
+
+    const timeEl = document.getElementById("current-time");
+    if (timeEl) {
+        timeEl.textContent = now.toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
     }
-}
 
-// Функция для обновления статуса
-function getTodayStatus() {
-    const today = new Date();
-    const currentHour = today.getHours();
-    const currentMinutes = today.getMinutes();
-    const statusElement = document.getElementById("status");
-    const todayHours = openingHours[today.getDay()];
-
-    if (statusElement && todayHours) {
-        if (todayHours.open) {
-            const currentTime = currentHour + currentMinutes / 60;
-            const isOpen =
-                currentTime >= todayHours.start && currentTime < todayHours.end;
-            statusElement.textContent = isOpen ? "С'est Ouverte" : "C'est Ferme";
-            statusElement.style.color = isOpen ?
-                "var(--text-error-color)" :
-                "var(--text-error-color)";
+    const status = document.getElementById("status");
+    if (status) {
+        if (today.open) {
+            const isOpen = currentTime >= today.start && currentTime < today.end;
+            status.textContent = isOpen ? "Ouvert" : "Fermé";
+            status.className = "status-badge " + (isOpen ? "open" : "closed");
         } else {
-            statusElement.textContent = "Закрыто";
-            statusElement.style.color = "#ff4d4d";
+            status.textContent = "Fermé";
+            status.className = "status-badge closed";
         }
-    } else {
-        // console.error("Элемент #status не найден или данные о часах работы отсутствуют.");
+    }
+
+    const list = document.getElementById("hours-list");
+    if (list) {
+        list.innerHTML = "";
+        days.forEach((day, index) => {
+            const li = document.createElement("li");
+            li.classList.toggle("today", index === currentDay);
+            li.innerHTML = `<span>${day.name}</span><span>${day.hours}</span>`;
+            list.appendChild(li);
+        });
     }
 }
 
-// Функция для получения часов работы на сегодня
-function getTodayHours() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-    const todayHours = openingHours[dayOfWeek];
-
-    if (todayHours) {
-        // Здесь вы можете добавить код, который будет обрабатывать часы работы
-        // Например, обновить интерфейс или выполнять другие действия
-    } else {
-        // Если данные о часах работы отсутствуют, вы можете обработать это по-другому
-        // Например, показать уведомление пользователю или установить значение по умолчанию
-    }
-}
-
-// Функция для обновления всего
-function updateAll() {
-    updateCurrentTime();
-    getTodayStatus();
-    getTodayHours();
-}
-
-// Обновляем время и статус каждую минуту
-setInterval(updateAll, 60000);
-
-// Вызываем функции при загрузке страницы
-document.addEventListener("DOMContentLoaded", updateAll);
-
+// Запуск при загрузке
+updateOpeningHours();
+setInterval(updateOpeningHours, 60000);
 document.addEventListener("DOMContentLoaded", () => {
     const products = document.querySelectorAll(".product");
     const showMoreButton = document.getElementById("show-more");

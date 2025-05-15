@@ -332,6 +332,112 @@ main {
   font-size: 16px;
 }
 
+.popular-products {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.see-all {
+  color: #4A60FF;
+  font-weight: 500;
+  text-decoration: none;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.rating .star {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+.rating .score {
+  font-weight: 600;
+  color: #000;
+}
+
+.rating .reviews {
+  color: #888;
+  font-weight: 400;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+
 /* Добавляем только этот медиазапрос в конец файла */
 
 @media (max-width: 768px) {
@@ -444,6 +550,8 @@ background-attachment: fixed;
 .contact-address {
   padding: 60px 20px;
   background-color: var(--background-color);
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
 }
 
@@ -477,6 +585,10 @@ background-attachment: fixed;
   .about-us,
   .contact-address {
     padding: 40px 15px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 45px;
   }
   .about-us h2,
   .contact-address h2 {
@@ -510,66 +622,92 @@ background-attachment: fixed;
 }
 
 /* Стили для блока с графиком работы */
-
-.opening-hours {
-  background-color: var(--light-background);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto;
+.opening-hours-box {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
   max-width: 400px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  font-family: 'Arial', sans-serif;
 }
 
-.opening-hours h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 15px;
-  text-align: center;
+.header-icon img {
+  width: 40px;
+  margin-bottom: 12px;
 }
 
-/* Стили для таблицы */
-
-.opening-hours table {
-  width: 100%;
-  border-collapse: collapse;
+.opening-hours-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
-.opening-hours td {
-  padding: 10px;
-  font-size: 1.1rem;
-  color: #666;
-  border-bottom: 1px solid #ddd;
+.hours-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  row-gap: 6px;
 }
 
-.opening-hours td:first-child {
-  font-weight: bold;
-  width: 30%;
+.hours-list li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
 }
 
-.opening-hours td:last-child {
-  text-align: right;
+.hours-list li.today {
+  background-color: #fff2ee;
+  border: 2px solid var(--text-error-color);
+  font-weight: 700;
+  color: #111827;
 }
 
-/* Стили для выходного дня */
-
-.opening-hours tr:last-child td {
+.hours-list li.today span:first-child::before {
+  content: "●";
   color: var(--text-error-color);
-  /* Красный цвет для "закрыто" */
-  font-weight: bold;
+  margin-right: 6px;
 }
 
-@media (max-width: 768px) {
-  .opening-hours {
-    padding: 15px;
-  }
-  .opening-hours h3 {
-    font-size: 1.3rem;
-  }
-  .opening-hours td {
-    font-size: 1rem;
-    padding: 8px;
-  }
+
+.status-block {
+  margin-top: 16px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+  font-size: 14px;
 }
+
+.status-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: gray;
+}
+
+.status-badge.open {
+  background-color: #22c55e;
+}
+
+.status-badge.closed {
+  background-color: #ef4444;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
 
 /* Стили для трейлера */
 
@@ -789,7 +927,7 @@ background-attachment: fixed;
   font-size: 18px;
   color: #fff;
   margin-bottom: 16px;
-  border-bottom: 2px solid #ff5e00;
+  border-bottom: 2px solid var(--text-error-color);
   display: inline-block;
   padding-bottom: 4px;
 }
@@ -817,13 +955,24 @@ background-attachment: fixed;
 .footer-socials a{
   color: white;
   border-radius: 50%;
-
   padding: 8px;
   transition: transform 0.3s;
 }
 
 .footer-socials a :hover {
   transform: scale(1.1);
+}
+.social-link-fb{
+  background-color: #3b5998;
+}
+.social-link-wa{
+  background-color: #25d366;
+}
+.social-link-tt{
+  background-color: #0077b5;
+}
+.social-link-ig{
+  background-color: #c13584;
 }
 
 .contact-item {
@@ -834,7 +983,7 @@ background-attachment: fixed;
 }
 
 .contact-item i {
-  color: #ff5e00;
+  color: var(--text-error-color);
   font-size: 16px;
   margin-top: 4px;
 }
@@ -859,7 +1008,7 @@ background-attachment: fixed;
 
 .footer-block.links li i {
   margin-right: 8px;
-  color: #ff5e00;
+  color: var(--text-error-color);
 }
 
 .footer-bottom {
@@ -1362,7 +1511,7 @@ html {
 
 .features-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 40px;
   flex-wrap: wrap;
   max-width: 1200px;
@@ -1404,4 +1553,26 @@ html {
   font-size: 14px;
   color: #6c757d;
   line-height: 1.5;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #555;
+}
+
+.rating .star {
+  color: #ffc107; /* Золотая звезда */
+  font-size: 16px;
+}
+
+.rating .score {
+  font-weight: bold;
+  color: #333;
+}
+
+.rating .reviews {
+  color: #757575;
 }
