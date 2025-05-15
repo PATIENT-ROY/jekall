@@ -69,8 +69,9 @@
   }
   
   .category.active {
-    background-color: #ffe9e4;
-    border: 2px solid var(--text-error-color)
+    background-color: #ffff99;  /* Ярко-желтый фон */
+    border: 2px solid #ffcc00; 
+
   }
   
   
