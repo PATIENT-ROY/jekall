@@ -196,24 +196,36 @@ document.addEventListener("DOMContentLoaded", function() {
 // Прокрутка к элементу
 function scrollToElement(targetId, highlightColor = "#FFC000") {
     const targetElement = document.querySelector(targetId);
+  
     if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  
+      // Только если элемент существует и имеет style
+      if (targetElement.style) {
         targetElement.style.border = `2px solid ${highlightColor}`;
         setTimeout(() => {
-            targetElement.style.border = "2px solid transparent";
+          targetElement.style.border = "2px solid transparent";
         }, 2000);
+      }
     } else {
-        console.warn(`Элемент с id="${targetId}" не найден`);
+      console.warn(`❗ Элемент с id="${targetId}" не найден`);
     }
-}
+  }
+  
 
 document.querySelectorAll(".menu a").forEach((link) => {
     link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+  
+      // Только для якорей внутри той же страницы
+      if (href.startsWith("#")) {
         e.preventDefault();
-        const targetId = link.getAttribute("href");
-        scrollToElement(targetId);
+        scrollToElement(href);
+      }
+      // Для внешней навигации — ничего не трогаем (даём браузеру перейти)
     });
-});
+  });
+  
 
 // // Фильтры
 document.querySelectorAll(".filter-button").forEach((button) => {

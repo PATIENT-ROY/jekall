@@ -7,6 +7,20 @@
     --text-color-black: #111827;
     --text-error-color: red;
   }
+  .nav-link {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 1000;
+  }
+  .highlight {
+    animation: highlight 2s ease-out;
+}
+
+@keyframes highlight {
+    0% { border-color: #FFC000; }
+    100% { border-color: transparent; }
+}
+
 
 .catalogue-intro {
     padding: 40px 20px 20px;
