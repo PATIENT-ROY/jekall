@@ -41,10 +41,9 @@
                 </a>
             </div>
            <section class="catalog">
+
   <div class="search">
     <input type="text" placeholder="Trouver des produits" />
-
-    <!-- Кнопка для десктопа -->
     <button id="search-button" class="btn-desktop">
       🔍 Rechercher
     </button>
@@ -135,13 +134,14 @@
                 <p>Tablettes enfants</p>
               </div>
             </div>
-          </section>
-          
+        </section>
+
         <section class="message_container">
             <div class="no_results_message" id="no-results-message">
                 Désolé, aucun produit trouvé.
             </div>
         </section>
+
         <section class="popular-products">
             <div class="section-header">
               <h2>Produits Populaires</h2>
@@ -210,8 +210,8 @@
                     </a></div>
               </div>
             </div>
-          </section>
-          
+        </section>
+
         <!-- Секция "О нас" -->
         <section class="about-us" id="about-us">
             <h2 class="section-title">À propos</h2>
@@ -221,39 +221,52 @@
             </p>
         </section>
 
-        <!-- Секция "Notre adresse" -->
-        <section class="contact-address" id="contact-address">
-            <div class="opening-hours-box">
-                <div class="header-icon">
-                  <img src="images/icons-socialmedia/map-pin-svgrepo-com.svg" alt="map icon" />
-                </div>
-                <h3>Adresse</h3>
-                <p style="padding: 0;">Vous pouvez nous trouver à l’adresse :<br>
-                  Galerie Couloir Céleste, Jacque Barron 100,<br>
-                  Kinshasa Gombe, Rep Dem du Congo.</p>
-                <p><strong>Référence :</strong> Arme du Salut MEMLING</p>
-                <a href="#" class="map-link">📍 Voir l'itinéraire</a>
+        <section class="values-section features">
+          <div class="container">
+              <h2 class="section-title">Nos Valeurs</h2>
+              <p class="section-description">
+                  Ces principes fondamentaux guident chacune de nos actions et décisions pour vous offrir le meilleur service possible.
+              </p>
+              
+              <div class="values-grid">
+                  <!-- Carte 1 -->
+                  <div class="value-card">
+                      <div class="icon-container">
+                          <!-- Icône SVG ou image -->
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12 8V12L15 15" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <h3 class="value-title">Ponctualité</h3>
+                      <p class="value-description">Nous respectons scrupuleusement vos horaires et garantissons un service rapide et efficace.</p>
+                  </div>
+                  
+                  <!-- Carte 2 -->
+                  <div class="value-card">
+                      <div class="icon-container">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C13.6418 4 15.1681 4.51784 16.4381 5.42299" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9 17L10 15L14 9L15 7" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M19 12H12M12 12L15 15M12 12L9 9" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <h3 class="value-title">Précision</h3>
+                      <p class="value-description">Chaque détail compte pour nous afin de vous offrir un résultat parfait.</p>
+                  </div>
+                  
+                  <!-- Carte 3 -->
+                  <div class="value-card">
+                      <div class="icon-container">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M22 12H18L15 21L9 3L6 12H2" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <h3 class="value-title">Professionnalisme</h3>
+                      <p class="value-description">Notre équipe qualifiée met tout en œuvre pour répondre à vos attentes avec expertise.</p>
+                  </div>
               </div>
-              
-            <div class="opening-hours-box">
-                <div class="header-icon">
-                  <img src="images/icons-socialmedia/calendar-check-svgrepo-com.svg" alt="calendar icon" />
-                </div>
-                <h3>Heures d'ouverture</h3>
-              
-                <ul id="hours-list" class="hours-list"></ul>
-              
-                <div class="status-block">
-                  <p><i class="fas fa-clock"></i> Heures actuelles: <span id="current-time">--:--</span></p>
-                  <p>Statut: <span id="status" class="status-badge">...</span></p>
-                </div>
-              </div>
-              
-        </section>
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509255!2d-122.42158368468158!3d37.77492927975933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581cbae233453%3A0x8f47b3b5e8f2476e!2sGolden+Gate+Bridge!5e0!3m2!1sen!2sru!4v1618337848393!5m2!1sen!2sru"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+          </div>
         </section>
 
         <section class="features">
@@ -276,12 +289,56 @@
               </div>
             </div>
           </section>
-          
+
+        <section class="question features ">
+            <h2 class="question-title">Besoin d'assistance?</h2>
+            <p>Contactez-nous directement via WhatsApp pour une réponse rapide à toutes vos questions.</p>
+            <a class="product-card__button" href="https://wa.me/+243?text=Bonjour!" target="_blank">
+              <i class="fab fa-whatsapp"></i>Commander via WhatsApp
+          </a>
+        </section>
+
+               <!-- Секция "Notre adresse" -->
+        <section class="contact-address" id="contact-address">
+          <div class="opening-hours-box">
+              <div class="header-icon">
+                <img src="images/icons-socialmedia/map-pin-svgrepo-com.svg" alt="map icon" />
+              </div>
+              <h3>Adresse</h3>
+              <p style="padding: 0;">Vous pouvez nous trouver à l’adresse :<br>
+                Galerie Couloir Céleste, Jacque Barron 100,<br>
+                Kinshasa Gombe, Rep Dem du Congo.</p>
+              <p><strong>Référence :</strong> Arme du Salut MEMLING</p>
+              <a href="#" class="map-link">📍 Voir l'itinéraire</a>
+            </div>
+            
+          <div class="opening-hours-box">
+              <div class="header-icon">
+                <img src="images/icons-socialmedia/calendar-check-svgrepo-com.svg" alt="calendar icon" />
+              </div>
+              <h3>Heures d'ouverture</h3>
+            
+              <ul id="hours-list" class="hours-list"></ul>
+            
+              <div class="status-block">
+                <p><i class="fas fa-clock"></i> Heures actuelles: <span id="current-time">--:--</span></p>
+                <p>Statut: <span id="status" class="status-badge">...</span></p>
+              </div>
+            </div>
+            
+        </section>
+
+      <!-- Секция "Carte" -->
+        <section class="map" id="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509255!2d-122.42158368468158!3d37.77492927975933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581cbae233453%3A0x8f47b3b5e8f2476e!2sGolden+Gate+Bridge!5e0!3m2!1sen!2sru!4v1618337848393!5m2!1sen!2sru"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
-      
+
           <!-- БЛОК 1: Бренд и соцсети -->
           <div class="footer-block brand">
             <h3><img src="images/favicon/favicon.ico" alt="icon" class="footer-icon"> Jekall Mobiles</h3>

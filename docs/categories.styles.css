@@ -78,6 +78,7 @@
     max-width: 300px;
     border: 2px solid transparent;
     transition: border 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
   }
   
   .category img {
@@ -94,7 +95,29 @@
   .category.active {
     background-color: #ffff99;  /* Ярко-желтый фон */
     border: 2px solid #ffcc00; 
-
   }
+
+.category.click-feedback {
+  transform: scale(0.95);
+}
   
-  
+  /* Подсветка при скролле */
+.highlight-scroll {
+  animation: flashHighlight 2s ease-out;
+  box-shadow: 0 0 0 4px #ffd70080;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+@keyframes flashHighlight {
+  0% {
+    background-color: #fff9d1;
+  }
+  50% {
+    background-color: #fff2a8;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+

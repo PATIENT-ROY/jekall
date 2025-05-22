@@ -16,51 +16,87 @@ function resetPage() {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Поиск товаров
-const searchInput = document.querySelector(".search input");
-const searchButton = document.getElementById("search-button"); // Получаем кнопку
-const products = document.querySelectorAll(".product");
-const noResultsMessage = document.getElementById("no-results-message");
-const productsSection = document.getElementById("products");
-const showMoreButton = document.getElementById("show-more");
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.querySelector(".search input");
+    const searchButton = document.getElementById("search-button");
+    const searchButtonIcon = document.getElementById("search-button-icon");
+    const noResultsMessage = document.getElementById("no-results-message");
+    const showMoreButton = document.getElementById("show-more");
 
-if (searchInput && searchButton && productsSection) {
-    // Поиск при нажатии кнопки
-    searchButton.addEventListener("click", () => {
-        performSearch();
-    });
+    // Функция для выполнения поиска
+    function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        let foundProducts = 0;
 
-    // Опционально: поиск при нажатии Enter в поле ввода
-    searchInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-            performSearch();
+        // Находим все продукты во всех секциях
+        const allProducts = document.querySelectorAll("#products .product, #accessoires .product, #tablettes .product");
+
+        allProducts.forEach((product) => {
+            const titleElement = product.querySelector("h2, h3");
+            const title = titleElement ? titleElement.textContent.toLowerCase() : "";
+            const match = title.includes(query);
+            
+            product.style.display = match ? "block" : "none";
+            if (match) foundProducts++;
+        });
+
+        // Управление сообщением "нет результатов" с анимацией
+        if (noResultsMessage) {
+            if (foundProducts === 0) {
+                noResultsMessage.style.display = "block";
+                noResultsMessage.style.animation = "fadeIn 0.5s ease-in-out";
+                // Прокрутка к сообщению, если нет результатов
+                setTimeout(() => {
+                    noResultsMessage.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                }, 100);
+            } else {
+                noResultsMessage.style.animation = "fadeOut 0.3s ease-in-out";
+                setTimeout(() => {
+                    noResultsMessage.style.display = "none";
+                }, 300);
+            }
         }
-    });
-}
 
-function performSearch() {
-    const query = searchInput.value.toLowerCase();
-    let foundProducts = 0;
+        // Управление кнопкой "Показать еще"
+        if (showMoreButton) {
+            showMoreButton.style.display = "none";
+        }
 
-    if (query.trim() !== "") {
-        productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Скролл к первому найденному товару
+        if (foundProducts > 0) {
+            const firstVisible = Array.from(allProducts).find(p => p.style.display !== "none");
+            if (firstVisible) {
+                firstVisible.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        }
+
+        // Очистка поля с задержкой
+        setTimeout(() => {
+            searchInput.value = "";
+        }, 500);
     }
 
-    products.forEach((product) => {
-        const title = product.querySelector("h2").textContent.toLowerCase();
-        if (title.includes(query)) {
-            product.style.display = "block";
-            foundProducts++;
-        } else {
-            product.style.display = "none";
-        }
-    });
+    // Обработчики событий
+    if (searchButton) {
+        searchButton.addEventListener("click", performSearch);
+    }
 
-    noResultsMessage.style.display = foundProducts === 0 ? "block" : "none";
-    showMoreButton.style.display = "none";
+    if (searchInput) {
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") performSearch();
+        });
+    }
 
-    // Очистка поля ввода после выполнения поиска
-    searchInput.value = "";
-}
+    if (searchButtonIcon) {
+        searchButtonIcon.addEventListener("click", performSearch);
+    }
+});
 
 // Смена изображений при наведении
 document.querySelectorAll(".main-image").forEach((img) => {
@@ -157,41 +193,52 @@ document.querySelectorAll(".main-image").forEach((img) => {
 
 // // Меню
 // Обновленный скрипт
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const menuToggleOpen = document.querySelector(".open-menu");
     const menuToggleClose = document.querySelector(".close-menu");
     const menu = document.querySelector(".menu");
-
+    const navLinks = document.querySelectorAll(".menu .nav-link");
+  
     function toggleMenu() {
-        const isMenuOpen = menu.classList.toggle("active");
-        menuToggleOpen.style.display = isMenuOpen ? "none" : "block";
-        menuToggleClose.style.display = isMenuOpen ? "block" : "none";
+      const isMenuOpen = menu.classList.toggle("active");
+      menuToggleOpen.style.display = isMenuOpen ? "none" : "block";
+      menuToggleClose.style.display = isMenuOpen ? "block" : "none";
     }
-
+  
+    function closeMenu() {
+      menu.classList.remove("active");
+      menuToggleOpen.style.display = "block";
+      menuToggleClose.style.display = "none";
+    }
+  
     function handleResize() {
-        if (window.innerWidth > 868) {
-            menu.classList.remove("active");
-            menuToggleOpen.style.display = "none";
-            menuToggleClose.style.display = "none";
-        } else {
-            menuToggleOpen.style.display = menu.classList.contains("active") ?
-                "none" :
-                "block";
-            menuToggleClose.style.display = menu.classList.contains("active") ?
-                "block" :
-                "none";
-        }
+      if (window.innerWidth > 868) {
+        menu.classList.remove("active");
+        menuToggleOpen.style.display = "none";
+        menuToggleClose.style.display = "none";
+      } else {
+        menuToggleOpen.style.display = menu.classList.contains("active") ? "none" : "block";
+        menuToggleClose.style.display = menu.classList.contains("active") ? "block" : "none";
+      }
     }
-
+  
     if (menuToggleOpen && menuToggleClose && menu) {
-        menuToggleOpen.addEventListener("click", toggleMenu);
-        menuToggleClose.addEventListener("click", toggleMenu);
-        window.addEventListener("resize", handleResize);
-
-        // Инициализация при загрузке
-        handleResize();
+      menuToggleOpen.addEventListener("click", toggleMenu);
+      menuToggleClose.addEventListener("click", toggleMenu);
+      window.addEventListener("resize", handleResize);
+      handleResize();
+  
+      // 👇 Закрывать меню при клике по ссылке (на мобильных)
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 868) {
+            closeMenu(); // ⬅ закрываем меню и меняем иконки
+          }
+        });
+      });
     }
-});
+  });
+  
 
 // Прокрутка к элементу
 function scrollToElement(targetId, highlightColor = "#FFC000") {
@@ -525,6 +572,26 @@ document.querySelectorAll(".category").forEach(category => {
       document.querySelectorAll(".product").forEach(product => {
         const productCategory = product.dataset.category;
         product.style.display = (productCategory === selectedCategory) ? "block" : "none";
+      });
+    });
+  });
+  
+  // Прокрутка к категории "Smartphones"
+  document.addEventListener("DOMContentLoaded", () => {
+    const categoryButtons = document.querySelectorAll(".category");
+  
+    categoryButtons.forEach((category) => {
+      category.addEventListener("click", () => {
+        const target = category.dataset.category || "products"; // по умолчанию smartphones
+  
+        const section = document.getElementById(target);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+  
+          // Активная категория выделена
+          categoryButtons.forEach(c => c.classList.remove("active"));
+          category.classList.add("active");
+        }
       });
     });
   });
