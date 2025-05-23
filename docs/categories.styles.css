@@ -34,12 +34,40 @@
     font-weight: 800;
     margin-bottom: 10px;
   }
-  @media screen and (max-width: 480px) {
-    .catalogue-intro h1 {
-      font-size: 24px;
-    }
-    
+ /* Для экранов 1021–869px */
+@media (max-width: 1021px) and (min-width: 869px) {
+  .catalogue-intro {
+    padding: 30px 16px 16px;
   }
+
+  .catalogue-intro h1 {
+    font-size: 30px;
+  }
+
+  .catalogue-intro p {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Для мобильных устройств */
+@media screen and (max-width: 868px) {
+  .catalogue-intro {
+    padding: 24px 12px 12px;
+  }
+
+  .catalogue-intro h1 {
+    font-size: 22px;
+  }
+
+  .catalogue-intro p {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+}
+
   
   .catalogue-intro p {
     font-size: 18px;
@@ -119,4 +147,20 @@
     background-color: transparent;
   }
 }
+.product-card h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
+@media (max-width: 768px) {
+  .product-card h3 {
+    font-size: 15px;
+    min-height: 40px; /* одинаковая высота для 2 строк */
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

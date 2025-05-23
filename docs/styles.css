@@ -41,9 +41,15 @@ main {
 }
 
 .header {
-  padding: 20px 0;
+  padding: 18px 0;
   background-color: #333;
   color: var(--background-color);
+}
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 16px 0;
+  }
+  
 }
 
 .header {
@@ -78,7 +84,6 @@ main {
     padding: 0;
   }
 }
-
 .logo a {
   display: flex;
   align-items: center;
@@ -87,27 +92,55 @@ main {
   color: #ccc;
   font-size: 12px;
 }
-
 .logo img {
   background-color: var(--background-color);
   border-radius: 50%;
   box-shadow: 0 4px 12px var(--hover-color);
   transition: transform 0.3s ease;
   object-fit: contain;
-
-
   display: block;
- 
   height: auto;
   max-width: 100px; /* или то, что хорошо смотрится */
   margin: 0 auto;
 }
-
 .logo img:hover {
   transform: scale(1.1);
 }
 .logo_title{
   color: var(--background-color);
+}
+.logo img.loaded {
+  display: block;
+}
+
+.logo-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(
+    100deg,
+    #e0e0e0 10%,
+    #f0f0f0 20%,
+    #e0e0e0 30%
+  );
+  background-size: 200% 100%;
+  animation: shine 1.2s infinite linear;
+}
+
+.logo img.loaded + .logo-placeholder {
+  display: none;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @media (max-width: 868px) {
   .logo h1 {
@@ -115,6 +148,7 @@ main {
   }
   .logo img {
     max-width: 60px;
+    height: 60px;
   }
 }
 @media (max-width: 1021px) and (min-width: 869px) {
@@ -923,10 +957,30 @@ background-attachment: fixed;
 .filters-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 18px;
 }
+@media (max-width: 1021px) and (min-width: 869px) {
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    padding: 16px;
+  }
+
+  .filter-button {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .filterButton-show-more {
+    padding: 8px 10px;
+  }
+}
+
 
 /* Стили для кнопок фильтров */
 
@@ -998,7 +1052,7 @@ background-attachment: fixed;
 .footer {
   background-color: #333;
   color: #ccc;
-  padding: 40px 20px 20px;
+  padding: 18px;
   font-family: Arial, sans-serif;
 }
 @media screen and (max-width: 480px) {
@@ -1024,7 +1078,12 @@ background-attachment: fixed;
 .footer-block {
   flex: 1;
   min-width: 250px;
-  padding: 0 20px;
+  padding: 0 18px;
+}
+@media screen and (max-width: 480px) {
+  .footer-block {
+    padding: 0 16px;
+  }
 }
 
 .footer-block h3 {
