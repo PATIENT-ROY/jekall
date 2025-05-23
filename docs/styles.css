@@ -39,6 +39,12 @@ body {
 main {
   flex: 1;
 }
+@media screen and (max-width: 480px) {
+  main {
+    padding: 16px;
+  }
+  
+}
 
 .header {
   padding: 18px 0;
@@ -519,6 +525,12 @@ main {
   text-align: center;
   transition: transform 0.2s ease;
 }
+@media screen and (max-width: 480px) {
+  .product-card {
+    padding: 16px;
+  }
+  
+}
 
 .product-card:hover {
   transform: translateY(-4px);
@@ -881,6 +893,12 @@ background-attachment: fixed;
   display: grid;
   row-gap: 6px;
 }
+@media screen and (max-width: 480px) {
+  .hours-list {
+    row-gap: 4px;
+  }
+  
+}
 
 .hours-list li {
   display: grid;
@@ -891,6 +909,13 @@ background-attachment: fixed;
   font-size: 15px;
   font-weight: 500;
   color: #374151;
+}
+@media screen and (max-width: 480px) {
+  .hours-list li {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
 }
 
 .hours-list li.today {
@@ -1233,11 +1258,23 @@ background-attachment: fixed;
   color: #fff;
   margin-bottom: 16px;
 }
+@media screen and (max-width: 480px) {
+  .footer-block h3 {
+    font-size: 16px;
+  }
+  
+}
 
 .footer-block p {
   font-size: 14px;
   line-height: 1.6;
   color: #aaa;
+}
+@media screen and (max-width: 480px) {
+  .footer-block p {
+    font-size: 12px;
+  }
+  
 }
 
 .footer-icon {
@@ -1246,6 +1283,12 @@ background-attachment: fixed;
   border-radius: 15px;
   vertical-align: middle;
   object-fit: contain;
+}
+@media screen and (max-width: 480px) {
+  .footer-icon {
+    width: 16px;
+  }
+  
 }
 
 .footer-socials {
@@ -1303,21 +1346,44 @@ background-attachment: fixed;
   gap: 10px;
   margin-bottom: 12px;
 }
+@media screen and (max-width: 480px) {
+  .contact-item {
+    gap: 8px;
+  }
+  
+}
 
 .contact-item i {
   color: var(--text-error-color);
   font-size: 16px;
   margin-top: 4px;
 }
-
+@media screen and (max-width: 480px) {
+  .contact-item i {
+    font-size: 14px;
+  }
+  
+}
 .contact-item p {
   margin: 0;
   font-size: 14px;
   color: #ddd;
 }
+@media screen and (max-width: 480px) {
+  .contact-item p {
+    font-size: 12px;
+  }
+  
+}
 .contact-item a {
   color: inherit; /* Наследует цвет текста от родителя */
   text-decoration: none; /* Убирает подчеркивание */
+}
+@media screen and (max-width: 480px) {
+  .contact-item a {
+    font-size: 12px;
+  }
+  
 }
 .contact-item a:hover {
   text-decoration: underline; /* Подчеркивание при наведении (опционально) */
@@ -1344,6 +1410,12 @@ background-attachment: fixed;
   font-size: 13px;
   color: #999;
   margin-top: 30px;
+}
+@media screen and (max-width: 480px) {
+  .footer-bottom {
+    margin-top: 20px;
+  }
+  
 }
 
 
@@ -1413,6 +1485,12 @@ background-attachment: fixed;
   transform: translateY(20px);
   filter: blur(4px);
   animation: appearBlurUp 0.6s forwards;
+}
+@media screen and (max-width: 480px) {
+  .animated-title span {
+    font-size: 1rem;
+  }
+  
 }
 
 .animated-title span:nth-child(1)  { animation-delay: 0.1s; }
@@ -1488,7 +1566,12 @@ background-attachment: fixed;
   text-align: center;
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* 🔶 Анимация */
 }
-
+@media screen and (max-width: 480px) {
+  .category {
+    padding: 24px 16px;
+  }
+  
+}
 .category:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transform: translateY(-6px); /* 🔶 Поднимаем карточку */
@@ -1499,12 +1582,14 @@ background-attachment: fixed;
   height: auto;
   margin-bottom: 16px;
   transition: transform 0.3s ease;
-  
-  /* Делаем иконку светлой */
   filter: brightness(0) invert(1); /* Превращает в белую иконку */
-  
-  /* Добавляем тень для лучшей видимости */
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+@media screen and (max-width: 480px) {
+  .category img.icon {
+    width: 48px;
+  }
+  
 }
 
 .category:hover img.icon {
@@ -1520,7 +1605,12 @@ background-attachment: fixed;
   margin: 0;
   color: #000;
 }
-
+@media screen and (max-width: 480px) {
+  .category p {
+    font-size: 16px;
+  }
+  
+}
 
 @media (max-width: 768px) {
 .message_container {
