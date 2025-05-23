@@ -78,12 +78,23 @@ main {
 }
 
 .logo img {
-  width: 65px;
-  height: 65px;
+
   border-radius: 50%;
   box-shadow: 0 4px 12px var(--hover-color);
   transition: transform 0.3s ease;
   object-fit: contain;
+
+
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100px; /* или то, что хорошо смотрится */
+  margin: 0 auto;
+
+  
+
+
+ 
 }
 
 .logo img:hover {
@@ -97,8 +108,7 @@ main {
     font-size: 1.2rem;
   }
   .logo img {
-    width: 50px;
-    height: 50px;
+    max-width: 60px;
   }
 }
 
