@@ -49,14 +49,14 @@ main {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #333;
   color: var(--background-color);
   z-index: 1000;
-  /* Убедитесь, что шапка поверх других элементов */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header_container {
@@ -112,7 +112,7 @@ main {
   justify-content: space-between;
   gap: 10px;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 16px auto;
   padding: 6px;
   background: #fff;
   border-radius: 40px;
@@ -497,7 +497,6 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    margin: 25px;
   }
   .search button {
     margin-left: 0;
@@ -553,9 +552,13 @@ main {
     background-color: #333;
     padding: 20px 0;
     z-index: 999;
+    transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
   }
   .menu.active {
     display: block;
+    transform: scaleY(1);
   }
   .menu ul {
     flex-direction: column;
@@ -854,7 +857,7 @@ background-attachment: fixed;
   background-color: var(--background-color);
   padding: 10px 20px;
   border-bottom: 1px solid #ddd;
-  margin-top: 125px;
+
 }
 
 .filters-container {
@@ -1210,11 +1213,6 @@ background-attachment: fixed;
 
 
 @media (max-width: 768px) {
-  .filters {
-    padding-top: 100px;
-  }
-}
-
 .message_container {
   padding: 16px;
 }
