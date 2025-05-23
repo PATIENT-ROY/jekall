@@ -147,11 +147,6 @@
     background-color: transparent;
   }
 }
-.product-card h3 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 @media (max-width: 768px) {
   .product-card h3 {
