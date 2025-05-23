@@ -37,7 +37,8 @@
  /* Для экранов 1021–869px */
 @media (max-width: 1021px) and (min-width: 869px) {
   .catalogue-intro {
-    padding: 30px 16px 16px;
+    padding: 32px 16px 16px;
+    text-align: center;
   }
 
   .catalogue-intro h1 {
@@ -88,6 +89,25 @@
     font-weight: 700;
     margin-bottom: 20px;
   }
+  @media screen and (max-width: 1021px) {
+    .categories-section h2 {
+      font-size: 22px;
+    }
+    .categories-section {
+      padding: 32px 16px;
+      margin: 16px auto;
+    }
+    
+  }
+  @media screen and (max-width: 768px) {
+    .categories-section h2 {
+      font-size: 20px;
+    }
+    .categories-section {
+      padding: 32px 16px;
+      margin: 16px auto;
+    }
+  }
   
   .categories {
     display: flex;
@@ -96,6 +116,17 @@
     justify-content: center;
   }
   
+  @media screen and (max-width: 1021px) {
+    .categories {
+      gap: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .categories {
+      gap: 12px;
+    }
+  }
   .category {
     background-color: #f0f0f0;
     padding: 32px 20px;
@@ -108,10 +139,34 @@
     cursor: pointer;
   }
   
+  @media screen and (max-width: 1021px) {
+    .category {
+      padding: 24px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .category {
+      padding: 20px 12px;
+    }
+  }
+  
   .category img {
     width: 64px;
     height: auto;
     margin-bottom: 12px;
+  }
+  
+  @media screen and (max-width: 1021px) {
+    .category img {
+      width: 56px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .category img {
+      width: 48px;
+    }
   }
   
   .category p {
@@ -119,7 +174,24 @@
     font-size: 16px;
   }
   
+  @media screen and (max-width: 1021px) {
+    .category p {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .category p {
+      font-size: 12px;
+    }
+  }
+  
   .category.active {
+    background-color: #ffff99;  /* Ярко-желтый фон */
+    border: 2px solid #ffcc00; 
+  }
+  
+  .category:hover {
     background-color: #ffff99;  /* Ярко-желтый фон */
     border: 2px solid #ffcc00; 
   }
@@ -149,7 +221,7 @@
 }
 
 @media (max-width: 768px) {
-  .product-card h3 {
+  .product h2 {
     font-size: 15px;
     min-height: 40px; /* одинаковая высота для 2 строк */
     line-height: 1.2;

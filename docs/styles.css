@@ -92,6 +92,12 @@ main {
   color: #ccc;
   font-size: 12px;
 }
+@media screen and (max-width: 480px) {
+  .logo a {
+    gap: 10px;
+  }
+}
+
 .logo img {
   background-color: var(--background-color);
   border-radius: 50%;
@@ -383,6 +389,16 @@ main {
   font-size: 1.2em;
   color: var(--text-color);
 }
+@media screen and (max-width: 768px) {
+  .product-card__title {
+    font-size: 1.2em;
+  }
+  
+  .product-card__price {
+    font-size: 1em;
+  }
+  
+}
 
 .product-card__button {
   display: inline-block;
@@ -401,6 +417,15 @@ main {
   /* Добавляем плавный переход */
   cursor: pointer;
   /* Изменяем курсор */
+}
+@media screen and (max-width: 768px) {
+  .product-card__button {
+    padding: 8px 16px;
+    /* Уменьшаем горизонтальные отступы */
+    font-size: 14px;
+    /* Уменьшаем размер шрифта */
+  }
+  
 }
 
 .product-card__button:hover {
@@ -463,6 +488,12 @@ main {
   -webkit-text-fill-color: transparent;
   animation: shine 2.5s linear infinite;
 }
+@media screen and (max-width: 480px) {
+  .see-all {
+    font-size: 14px;
+  }
+  
+}
 
 @keyframes shine {
   0% {
@@ -500,12 +531,25 @@ main {
   margin-bottom: 16px;
   height: 180px; /* Фиксированная высота изображения */
 }
+@media screen and (max-width: 480px) {
+  .product-card img {
+    max-height: 120px;
+    height: 120px; /* Фиксированная высота изображения */
+  }
+  
+}
 
 .product-card h3 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
   color: #000;
+}
+@media screen and (max-width: 480px) {
+  .product-card h3 {
+    font-size: 16px;
+  }
+  
 }
 
 .rating {
@@ -516,20 +560,43 @@ main {
   font-size: 14px;
   margin-bottom: 12px;
 }
+@media screen and (max-width: 480px) {
+  .rating {
+    font-size: 12px;
+  }
+  
+}
 
 .rating .star {
   color: #ffc107;
   font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+  .rating .star {
+    font-size: 14px;
+  }
+  
 }
 
 .rating .score {
   font-weight: 600;
   color: #000;
 }
+@media screen and (max-width: 480px) {
+  .rating .score {
+    font-size: 14px;
+  }
+  
+}
 
 .rating .reviews {
   color: #888;
   font-weight: 400;
+}
+@media screen and (max-width: 480px) {
+  .rating .reviews {
+    font-size: 12px;
+  }
 }
 
 .price {
@@ -537,6 +604,12 @@ main {
   font-weight: 700;
   margin-bottom: 20px;
   color: #000;
+}
+@media screen and (max-width: 480px) {
+  .price {
+    font-size: 16px;
+  }
+  
 }
 
 .whatsapp-btn {
@@ -551,6 +624,14 @@ main {
   color: var(--text-color);
   text-decoration: none;
   transition: background 0.3s ease;
+}
+@media screen and (max-width: 480px) {
+  .whatsapp-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
 }
 
 .whatsapp-btn:hover {
@@ -612,7 +693,15 @@ main {
     /* Уменьшаем отступы */
   }
 }
-
+.nav-link {
+  font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+  .nav-link {
+    font-size: 14px;
+  }
+  
+}
 /* Обновленные стили */
 
 .menu-toggle {
@@ -755,17 +844,34 @@ background-attachment: fixed;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   font-family: 'Arial', sans-serif;
 }
+@media screen and (max-width: 480px) {
+  .opening-hours-box {
+    padding: 16px;
+  }
+  
+}
 
 .header-icon img {
   width: 40px;
   margin-bottom: 12px;
 }
-
+@media screen and (max-width: 480px) {
+  .header-icon img {
+    width: 32px;
+  }
+  
+}
 .opening-hours-box h3 {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--text-color-black);
+}
+@media screen and (max-width: 480px) {
+  .opening-hours-box h3 {
+    font-size: 16px;
+  }
+  
 }
 
 .hours-list {
@@ -833,7 +939,29 @@ background-attachment: fixed;
   text-decoration: none;
   font-weight: 500;
 }
-
+@media screen and (max-width: 480px) {
+  .map-link {
+    font-size: 12px;
+  }
+}
+.map_container {
+  margin-top: 20px;
+}
+@media screen and (max-width: 480px) {
+  .map_container {
+    margin-top: 10px;
+  }
+}
+.map_container iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 480px) {
+  .map_container iframe {
+    height: 300px;
+  }
+  
+}
 
 /* Стили для трейлера */
 
@@ -846,18 +974,27 @@ background-attachment: fixed;
 .trailer-container {
   display: flex;
   transition: transform 0.5s ease;
-  /* Плавная анимация прокрутки */
   margin: 0 -16px;
+}
+@media screen and (max-width: 480px) {
+  .trailer-container {
+    margin: 0 -8px;
+  }
+  
 }
 
 .trailer-slide {
   min-width: 100%;
-  /* Каждый слайд занимает 100% ширины */
   box-sizing: border-box;
   padding: 0 16px;
   border-radius: 10px;
-  /* Скругляем контейнер */
   overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+  .trailer-slide {
+    padding: 0 8px;
+  }
+  
 }
 
 .trailer-slide img {
@@ -878,13 +1015,10 @@ background-attachment: fixed;
 @media (max-width: 868px) {
   .trailer {
     height: auto;
-    /* Автоматическая высота */
   }
   .trailer-slide img {
     height: 300px;
-    /* Уменьшаем высоту слайдов */
     object-fit: cover;
-    /* Сохраняем пропорции */
   }
   .trailer-prev,
   .trailer-next {
@@ -974,6 +1108,13 @@ background-attachment: fixed;
   .filter-button {
     font-size: 14px;
     padding: 10px 14px;
+  }
+  @media screen and (max-width: 768px) {
+    .filter-button {
+      font-size: 12px;
+      padding: 8px 10px;
+    }
+    
   }
 
   .filterButton-show-more {
@@ -1083,6 +1224,7 @@ background-attachment: fixed;
 @media screen and (max-width: 480px) {
   .footer-block {
     padding: 0 16px;
+    min-width: 200px;
   }
 }
 
@@ -1111,6 +1253,12 @@ background-attachment: fixed;
   gap: 16px;
   margin-top: 16px;
 }
+@media screen and (max-width: 480px) {
+  .footer-socials {
+    gap: 12px;
+  }
+  
+}
 
 .footer-socials a {
   color: white;
@@ -1123,6 +1271,14 @@ background-attachment: fixed;
   justify-content: center; /* Горизонтальное выравнивание (для flex) */
   transition: transform 0.3s;
   text-decoration: none;
+}
+@media screen and (max-width: 480px) {
+  .footer-socials a {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  
 }
 
 .footer-socials a:hover {
@@ -1206,6 +1362,12 @@ background-attachment: fixed;
   margin-left: 10px;
   font-weight: bold;
 }
+@media screen and (max-width: 480px) {
+  #status {
+    margin-left: 5px;
+  }
+  
+}
 
 #today-schedule {
   margin-left: 10px;
@@ -1223,6 +1385,12 @@ background-attachment: fixed;
   text-align: center;
   padding: 10px;
 }
+@media screen and (max-width: 480px) {
+  .filters_container {
+    padding: 8px;
+  }
+}
+
 
 .header-container_title {
   color: var(--text-color-black);
@@ -1232,6 +1400,12 @@ background-attachment: fixed;
   animation: blurFadeIn 2s ease-in-out forwards;
   filter: blur(8px);
   opacity: 0;
+}
+@media screen and (max-width: 480px) {
+  .header-container_title {
+    font-size: 1.5rem;
+  }
+  
 }
 .animated-title span {
   display: inline-block;
@@ -1278,6 +1452,12 @@ background-attachment: fixed;
   align-items: center;
   margin-bottom: 24px;
 }
+@media screen and (max-width: 480px) {
+  .categories-header {
+    margin-bottom: 16px;
+  }
+  
+}
 
 .categories-header h2 {
   font-size: 28px;
@@ -1288,6 +1468,7 @@ background-attachment: fixed;
   .categories-header h2 {
     font-size: 24px;
   }
+  
 }
 
 .categories {
@@ -1398,7 +1579,12 @@ background-attachment: fixed;
   background-color: var(--light-background);
   text-align: center;
 }
-
+@media screen and (max-width: 480px) {
+  .show-more_container {
+    padding: 32px 16px;
+  }
+  
+}
 .show-more-button {
   /* Базовые стили */
   display: inline-block;
@@ -1562,6 +1748,13 @@ html {
 .back-to-top svg {
   width: 24px;
   height: 24px;
+}
+@media screen and (max-width: 480px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+  }
+  
 }
 
 /* Базовые стили (десктоп и планшеты) */
@@ -1730,6 +1923,12 @@ html {
   padding: 60px 20px;
   background-color: #fff;
 }
+@media screen and (max-width: 480px) {
+  .features {
+    padding: 40px 20px;
+  }
+  
+}
 
 .features-title {
   font-size: 32px;
@@ -1783,7 +1982,52 @@ html {
     transform: translate(0);
   }
 }
-
+.question-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text-color-black);
+  position: relative; /* Нужно для псевдоэлементов */
+}
+@media screen and (max-width: 480px) {
+  .question-title {
+    font-size: 24px;
+  }
+  
+}
+.question-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-color-black);
+}
+@media screen and (max-width: 480px) {
+  .question-description {
+    font-size: 16px;
+  }
+  
+}
+.product-card__button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  /* Увеличиваем горизонтальные отступы */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border: 2px solid transparent;
+  /* Добавляем границу */
+  border-radius: 5px;
+  font-weight: bold;
+  /* Делаем текст кнопки более заметным */
+  transition: all 0.3s ease;
+  /* Добавляем плавный переход */
+}
+@media screen and (max-width: 480px) {
+  .product-card__button {
+    font-size: 14px;
+  }
+  
+}
 /* Дополнительно: мерцание */
 .features-title:hover {
   animation: text-flicker 0.5s linear infinite alternate;
@@ -1811,6 +2055,12 @@ html {
   max-width: 1200px;
   margin: 0 auto;
 }
+@media screen and (max-width: 480px) {
+  .features-list {
+    gap: 20px;
+  }
+  
+}
 
 .feature-item {
   flex: 1;
@@ -1829,12 +2079,26 @@ html {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 480px) {
+  .icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+  
+}
 
 .icon-circle img {
   width: 32px;
   height: 32px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(40%) sepia(96%) saturate(2450%) hue-rotate(6deg) brightness(98%) contrast(96%);
+}
+@media screen and (max-width: 480px) {
+  .icon-circle img {
+    width: 24px;
+    height: 24px;
+  }
+  
 }
 
 .feature-item h3 {
@@ -1875,7 +2139,37 @@ html {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
 }
+@media screen and (max-width: 480px) {
+  .values-section {
+    padding: 2rem 0;
+  }
+  
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
 
+  }
+  
+}
+.ection-description {
+  text-align: center;
+  color: #666;
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+}
+@media screen and (max-width: 480px) {
+  .section-description {
+    font-size: 1rem;
+  }
+  
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1915,6 +2209,12 @@ html {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
 }
+@media screen and (max-width: 480px) {
+  .value-card {
+    padding: 1rem;
+  }
+  
+}
 
 .value-card:hover {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -1930,14 +2230,33 @@ html {
   justify-content: center;
   margin-bottom: 1.5rem;
 }
+@media screen and (max-width: 480px) {
+  .icon-container {
+    height: 3rem;
+    width: 3rem;
+  }
+  
+}
 
 .value-title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
+@media screen and (max-width: 480px) {
+  .value-title {
+    font-size: 1rem;
+  }
+  
+}
 
 .value-description {
   color: #666;
   line-height: 1.5;
+}
+@media screen and (max-width: 480px) {
+  .value-description {
+    font-size: 0.8rem;
+  }
+  
 }
