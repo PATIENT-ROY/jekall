@@ -38,8 +38,6 @@ body {
 
 main {
   flex: 1;
-  padding-top: 40px;
-  /* Отступ для шапки и фильтров */
 }
 
 .header {
@@ -67,6 +65,14 @@ main {
   margin: 0 auto;
   padding: 0 20px;
 }
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; /* добавим отступы */
+  overflow: visible; /* очень важно */
+  height: auto;
+}
 
 .logo a {
   display: flex;
@@ -90,11 +96,6 @@ main {
   height: auto;
   max-width: 100px; /* или то, что хорошо смотрится */
   margin: 0 auto;
-
-  
-
-
- 
 }
 
 .logo img:hover {
