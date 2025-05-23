@@ -73,6 +73,11 @@ main {
   overflow: visible; /* очень важно */
   height: auto;
 }
+@media screen and (max-width: 480px) {
+  .logo {
+    padding: 0;
+  }
+}
 
 .logo a {
   display: flex;
@@ -84,7 +89,7 @@ main {
 }
 
 .logo img {
-
+  background-color: var(--background-color);
   border-radius: 50%;
   box-shadow: 0 4px 12px var(--hover-color);
   transition: transform 0.3s ease;
@@ -92,7 +97,7 @@ main {
 
 
   display: block;
-  width: 100%;
+ 
   height: auto;
   max-width: 100px; /* или то, что хорошо смотрится */
   margin: 0 auto;
@@ -110,6 +115,56 @@ main {
   }
   .logo img {
     max-width: 60px;
+  }
+}
+@media (max-width: 1021px) and (min-width: 869px) {
+  .logo img {
+    max-width: 80px;
+  }
+  .header_container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px;
+  }
+
+  .logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo_title {
+    font-size: 18px;
+  }
+
+  .search {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .search input {
+    font-size: 14px;
+    padding: 10px;
+    flex: 1;
+  }
+
+  .btn-desktop {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 10px;
+  }
+
+  .menu ul li a {
+    font-size: 14px;
   }
 }
 
@@ -175,6 +230,7 @@ main {
   transform: translateY(-2px);
 }
 
+
 .menu ul {
   list-style-type: none;
   display: flex;
@@ -203,14 +259,6 @@ main {
   padding: 20px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
-/* .product {
-  display: none;
-}
-
-.product.visible {
-  display: block;
-} */
-
 
 .product {
   background-color: var(--background-color);
@@ -557,15 +605,16 @@ main {
   .menu {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 90px;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: var(--text-color);
     padding: 20px 0;
     z-index: 999;
     transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.3s ease;
+    transform-origin: top;
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   .menu.active {
     display: block;
@@ -952,7 +1001,11 @@ background-attachment: fixed;
   padding: 40px 20px 20px;
   font-family: Arial, sans-serif;
 }
-
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 16px;
+  }
+}
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -960,6 +1013,12 @@ background-attachment: fixed;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .footer-container {
+    gap: 16px;
+  }
+  
 }
 
 .footer-block {
@@ -1226,6 +1285,11 @@ background-attachment: fixed;
 @media (max-width: 768px) {
 .message_container {
   padding: 16px;
+}
+
+.message_container p {
+  font-size: 1.2rem;
+}
 }
 @keyframes fadeIn {
   from {
@@ -1678,7 +1742,6 @@ html {
   .features-title {
     font-size: 24px;
   }
-  
 }
 
 .features-list {
