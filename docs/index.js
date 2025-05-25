@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {});
 
 
 const currentPath = window.location.pathname;
-  const links = document.querySelectorAll(".nav-link");
+const links = document.querySelectorAll(".nav-link");
 
-  links.forEach(link => {
+links.forEach(link => {
     if (link.getAttribute("href") === currentPath) {
-      link.classList.add("active");
+        link.classList.add("active");
     }
-  });
+});
+
 function resetPage() {
     window.location.reload(); // Или сброс полей вручную
 }
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const titleElement = product.querySelector("h2, h3");
             const title = titleElement ? titleElement.textContent.toLowerCase() : "";
             const match = title.includes(query);
-            
+
             product.style.display = match ? "block" : "none";
             if (match) foundProducts++;
         });
@@ -193,86 +194,86 @@ document.querySelectorAll(".main-image").forEach((img) => {
 
 // // Меню
 // Обновленный скрипт
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const menuToggleOpen = document.querySelector(".open-menu");
     const menuToggleClose = document.querySelector(".close-menu");
     const menu = document.querySelector(".menu");
     const navLinks = document.querySelectorAll(".menu .nav-link");
-  
+
     function toggleMenu() {
-      const isMenuOpen = menu.classList.toggle("active");
-      menuToggleOpen.style.display = isMenuOpen ? "none" : "block";
-      menuToggleClose.style.display = isMenuOpen ? "block" : "none";
+        const isMenuOpen = menu.classList.toggle("active");
+        menuToggleOpen.style.display = isMenuOpen ? "none" : "block";
+        menuToggleClose.style.display = isMenuOpen ? "block" : "none";
     }
-  
+
     function closeMenu() {
-      menu.classList.remove("active");
-      menuToggleOpen.style.display = "block";
-      menuToggleClose.style.display = "none";
-    }
-  
-    function handleResize() {
-      if (window.innerWidth > 868) {
         menu.classList.remove("active");
-        menuToggleOpen.style.display = "none";
+        menuToggleOpen.style.display = "block";
         menuToggleClose.style.display = "none";
-      } else {
-        menuToggleOpen.style.display = menu.classList.contains("active") ? "none" : "block";
-        menuToggleClose.style.display = menu.classList.contains("active") ? "block" : "none";
-      }
     }
-  
+
+    function handleResize() {
+        if (window.innerWidth > 868) {
+            menu.classList.remove("active");
+            menuToggleOpen.style.display = "none";
+            menuToggleClose.style.display = "none";
+        } else {
+            menuToggleOpen.style.display = menu.classList.contains("active") ? "none" : "block";
+            menuToggleClose.style.display = menu.classList.contains("active") ? "block" : "none";
+        }
+    }
+
     if (menuToggleOpen && menuToggleClose && menu) {
-      menuToggleOpen.addEventListener("click", toggleMenu);
-      menuToggleClose.addEventListener("click", toggleMenu);
-      window.addEventListener("resize", handleResize);
-      handleResize();
-  
-      // 👇 Закрывать меню при клике по ссылке (на мобильных)
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 868) {
-            closeMenu(); // ⬅ закрываем меню и меняем иконки
-          }
+        menuToggleOpen.addEventListener("click", toggleMenu);
+        menuToggleClose.addEventListener("click", toggleMenu);
+        window.addEventListener("resize", handleResize);
+        handleResize();
+
+        // 👇 Закрывать меню при клике по ссылке (на мобильных)
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth <= 868) {
+                    closeMenu(); // ⬅ закрываем меню и меняем иконки
+                }
+            });
         });
-      });
     }
-  });
-  
+});
+
 
 // Прокрутка к элементу
 function scrollToElement(targetId, highlightColor = "#FFC000") {
     const targetElement = document.querySelector(targetId);
-  
+
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-  
-      // Только если элемент существует и имеет style
-      if (targetElement.style) {
-        targetElement.style.border = `2px solid ${highlightColor}`;
-        setTimeout(() => {
-          targetElement.style.border = "2px solid transparent";
-        }, 2000);
-      }
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Только если элемент существует и имеет style
+        if (targetElement.style) {
+            targetElement.style.border = `2px solid ${highlightColor}`;
+            setTimeout(() => {
+                targetElement.style.border = "2px solid transparent";
+            }, 2000);
+        }
     } else {
-      console.warn(`❗ Элемент с id="${targetId}" не найден`);
+        console.warn(`❗ Элемент с id="${targetId}" не найден`);
     }
-  }
-  
+}
+
 
 document.querySelectorAll(".menu a").forEach((link) => {
     link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-  
-      // Только для якорей внутри той же страницы
-      if (href.startsWith("#")) {
-        e.preventDefault();
-        scrollToElement(href);
-      }
-      // Для внешней навигации — ничего не трогаем (даём браузеру перейти)
+        const href = link.getAttribute("href");
+
+        // Только для якорей внутри той же страницы
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            scrollToElement(href);
+        }
+        // Для внешней навигации — ничего не трогаем (даём браузеру перейти)
     });
-  });
-  
+});
+
 
 // // Фильтры
 document.querySelectorAll(".filter-button").forEach((button) => {
@@ -311,7 +312,7 @@ document.querySelectorAll(".filter-button").forEach((button) => {
 
         // Прокрутка
         if (filteredProducts.length === 0) {
-            noResultsMessage?.scrollIntoView({ behavior: "smooth", block: "center" });
+            noResultsMessage ?.scrollIntoView({ behavior: "smooth", block: "center" });
         } else if (filterValue && filteredProducts[0]) {
             filteredProducts[0].scrollIntoView({
                 behavior: "smooth",
@@ -335,13 +336,13 @@ if (trailerContainer && totalSlides > 0) {
 
     setInterval(showNextSlide, 5000);
 
-    document.querySelector(".trailer-prev")?.addEventListener("click", () => {
+    document.querySelector(".trailer-prev") ?.addEventListener("click", () => {
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         const offset = -currentSlide * 100;
         trailerContainer.style.transform = `translateX(${offset}%)`;
     });
 
-    document.querySelector(".trailer-next")?.addEventListener("click", () => {
+    document.querySelector(".trailer-next") ?.addEventListener("click", () => {
         currentSlide = (currentSlide + 1) % totalSlides;
         const offset = -currentSlide * 100;
         trailerContainer.style.transform = `translateX(${offset}%)`;
@@ -563,37 +564,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 document.querySelectorAll(".category").forEach(category => {
     category.addEventListener("click", () => {
-      const selectedCategory = category.dataset.category;
-  
-      // Сброс активного класса
-      document.querySelectorAll(".category").forEach(cat => cat.classList.remove("active"));
-      category.classList.add("active");
-  
-      // Фильтрация товаров
-      document.querySelectorAll(".product").forEach(product => {
-        const productCategory = product.dataset.category;
-        product.style.display = (productCategory === selectedCategory) ? "block" : "none";
-      });
+        const selectedCategory = category.dataset.category;
+
+        // Сброс активного класса
+        document.querySelectorAll(".category").forEach(cat => cat.classList.remove("active"));
+        category.classList.add("active");
+
+        // Фильтрация товаров
+        document.querySelectorAll(".product").forEach(product => {
+            const productCategory = product.dataset.category;
+            product.style.display = (productCategory === selectedCategory) ? "block" : "none";
+        });
     });
-  });
-  
-  // Прокрутка к категории "Smartphones"
-  document.addEventListener("DOMContentLoaded", () => {
+});
+
+// Прокрутка к категории "Smartphones"
+document.addEventListener("DOMContentLoaded", () => {
     const categoryButtons = document.querySelectorAll(".category");
-  
+
     categoryButtons.forEach((category) => {
-      category.addEventListener("click", () => {
-        const target = category.dataset.category || "products"; // по умолчанию smartphones
-  
-        const section = document.getElementById(target);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
-  
-          // Активная категория выделена
-          categoryButtons.forEach(c => c.classList.remove("active"));
-          category.classList.add("active");
-        }
-      });
+        category.addEventListener("click", () => {
+            const target = category.dataset.category || "products"; // по умолчанию smartphones
+
+            const section = document.getElementById(target);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                // Активная категория выделена
+                categoryButtons.forEach(c => c.classList.remove("active"));
+                category.classList.add("active");
+            }
+        });
     });
-  });
-  
+});
