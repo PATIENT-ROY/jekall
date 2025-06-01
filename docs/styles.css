@@ -146,14 +146,20 @@ main {
 
 .logo-placeholder {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background: linear-gradient( 100deg, #e0e0e0 10%, #f0f0f0 20%, #e0e0e0 30%);
+    background: linear-gradient(100deg, #e0e0e0 10%, #f0f0f0 20%, #e0e0e0 30%);
     background-size: 200% 100%;
     animation: shine 1.2s infinite linear;
+}
+
+@media screen and (max-width: 480px) {
+    .logo-placeholder {
+        width: 40px;
+        height: 40px;
+    }
+
 }
 
 .logo img.loaded+.logo-placeholder {
@@ -164,6 +170,7 @@ main {
     0% {
         background-position: -200% 0;
     }
+
     100% {
         background-position: 200% 0;
     }
@@ -173,6 +180,7 @@ main {
     .logo h1 {
         font-size: 1.2rem;
     }
+
     .logo img {
         max-width: 40px;
         height: 40px;
@@ -183,19 +191,23 @@ main {
     .logo img {
         max-width: 80px;
     }
+
     .header_container {
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 12px;
         padding: 10px 16px;
     }
+
     .logo img {
         width: 60px;
         height: 60px;
     }
+
     .logo_title {
         font-size: 18px;
     }
+
     .search {
         flex: 1 1 100%;
         display: flex;
@@ -203,21 +215,25 @@ main {
         max-width: 100%;
         gap: 10px;
     }
+
     .search input {
         font-size: 14px;
         padding: 10px;
         flex: 1;
     }
+
     .btn-desktop {
         font-size: 14px;
         padding: 10px 16px;
     }
+
     .menu ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
         padding-top: 10px;
     }
+
     .menu ul li a {
         font-size: 14px;
     }
@@ -260,7 +276,8 @@ main {
     font-size: 16px;
     border-radius: 40px;
     background-color: transparent;
-    min-width: 0; /* ⬅️ важно, чтобы не переполнял flex-контейнер */
+    min-width: 0;
+    /* ⬅️ важно, чтобы не переполнял flex-контейнер */
 }
 
 .search input::placeholder {
@@ -373,6 +390,7 @@ main {
     .btn-desktop {
         display: none !important;
     }
+
     .btn-mobile {
         display: flex !important;
         align-items: center;
@@ -384,6 +402,7 @@ main {
         border-radius: 50%;
         cursor: pointer;
     }
+
     .btn-mobile svg {
         stroke: var(--text-color);
     }
@@ -396,6 +415,7 @@ main {
         display: flex;
         width: 100%;
     }
+
     .main-image img {
         scroll-snap-align: start;
         flex: 0 0 100%;
@@ -416,6 +436,7 @@ main {
     .product-card__title {
         font-size: 1.2em;
     }
+
     .product-card__price {
         font-size: 1em;
     }
@@ -519,6 +540,7 @@ main {
     0% {
         background-position: -100%;
     }
+
     100% {
         background-position: 200%;
     }
@@ -677,6 +699,7 @@ main {
         gap: 10px;
         padding: 10px;
     }
+
     .product {
         width: auto;
         margin: 0;
@@ -693,10 +716,12 @@ main {
         align-items: flex-start;
         padding: 0 14px;
     }
+
     .menu ul {
         flex-direction: column;
         gap: 5px;
     }
+
     .search {
         flex-direction: row;
         align-items: center;
@@ -704,19 +729,23 @@ main {
         padding: 0;
         margin: 8px auto;
     }
+
     .search button {
         margin-left: 0;
         font-size: 14px;
     }
+
     .image-container {
         margin: 12px auto;
         max-width: 200px;
         /* Уменьшаем размер на мобильных устройствах */
     }
+
     .search input {
         flex: 1;
         font-size: 14px;
     }
+
     .menu ul {
         flex-direction: column;
         /* Меню в столбик */
@@ -756,9 +785,11 @@ main {
     .open-menu {
         display: block;
     }
+
     .close-menu {
         display: none;
     }
+
     .menu {
         display: none;
         position: absolute;
@@ -773,10 +804,12 @@ main {
         transition: transform 0.3s ease;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     .menu.active {
         display: block;
         transform: scaleY(1);
     }
+
     .menu ul {
         flex-direction: column;
         gap: 15px;
@@ -832,6 +865,7 @@ logo-placeholder .about-us {
 /* Адаптивность */
 
 @media (max-width: 868px) {
+
     .about-us,
     .contact-address {
         padding: 40px 15px;
@@ -840,32 +874,39 @@ logo-placeholder .about-us {
         flex-direction: column;
         gap: 45px;
     }
+
     .about-us h2,
     .contact-address h2 {
         font-size: 2rem;
     }
+
     .about-us p,
     .contact-address p {
         font-size: 1rem;
     }
+
     .contact-address iframe {
         height: 300px;
     }
 }
 
 @media (max-width: 480px) {
+
     .about-us,
     .contact-address {
         padding: 30px 10px;
     }
+
     .about-us h2,
     .contact-address h2 {
         font-size: 1.8rem;
     }
+
     .about-us p,
     .contact-address p {
         font-size: 0.9rem;
     }
+
     .contact-address iframe {
         height: 250px;
     }
@@ -1074,10 +1115,12 @@ logo-placeholder .about-us {
     .trailer {
         height: auto;
     }
+
     .trailer-slide img {
         height: 300px;
         object-fit: cover;
     }
+
     .trailer-prev,
     .trailer-next {
         padding: 8px;
@@ -1086,9 +1129,11 @@ logo-placeholder .about-us {
         background-color: rgba(0, 0, 0, 0.3);
         /* Прозрачнее фон */
     }
+
     .trailer-prev {
         left: 5px;
     }
+
     .trailer-next {
         right: 5px;
     }
@@ -1102,6 +1147,7 @@ logo-placeholder .about-us {
         height: 250px;
         /* Еще меньше высота */
     }
+
     .trailer-prev,
     .trailer-next {
         font-size: 16px;
@@ -1165,16 +1211,19 @@ logo-placeholder .about-us {
         gap: 8px 12px;
         padding: 16px;
     }
+
     .filter-button {
         font-size: 14px;
         padding: 10px 14px;
     }
+
     @media screen and (max-width: 768px) {
         .filter-button {
             font-size: 12px;
             padding: 8px 10px;
         }
     }
+
     .filterButton-show-more {
         padding: 8px 10px;
     }
@@ -1221,10 +1270,12 @@ logo-placeholder .about-us {
         display: inline-block;
         /* Показываем кнопку */
     }
+
     .filters-container {
         gap: 8px;
         padding: 16px;
     }
+
     .mobile-hidden {
         display: none;
     }
@@ -1644,6 +1695,7 @@ logo-placeholder .about-us {
         padding: 16px;
         margin: 16px auto;
     }
+
     .categories {
         display: flex;
         flex-direction: row;
@@ -1755,6 +1807,7 @@ logo-placeholder .about-us {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1766,6 +1819,7 @@ logo-placeholder .about-us {
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-10px);
@@ -1788,6 +1842,7 @@ logo-placeholder .about-us {
     .no_results_message {
         padding-left: 60px;
     }
+
     .no_results_message::before {
         font-size: 1.4rem;
         left: 12px;
@@ -1867,6 +1922,7 @@ logo-placeholder .about-us {
         transform: scale(0, 0);
         opacity: 0.5;
     }
+
     100% {
         transform: scale(20, 20);
         opacity: 0;
@@ -1899,6 +1955,7 @@ logo-placeholder .about-us {
 /* Мобильные устройства */
 
 @media (max-width: 868px) {
+
     #blank,
     #products,
     #accessoires,
@@ -2205,18 +2262,23 @@ html {
     0% {
         transform: translate(0);
     }
+
     20% {
         transform: translate(-3px, 3px);
     }
+
     40% {
         transform: translate(-3px, -3px);
     }
+
     60% {
         transform: translate(3px, 3px);
     }
+
     80% {
         transform: translate(3px, -3px);
     }
+
     100% {
         transform: translate(0);
     }
@@ -2249,23 +2311,6 @@ html {
     }
 }
 
-.product-card__button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    /* Увеличиваем горизонтальные отступы */
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    text-decoration: none;
-    border: 2px solid transparent;
-    /* Добавляем границу */
-    border-radius: 5px;
-    font-weight: bold;
-    /* Делаем текст кнопки более заметным */
-    transition: all 0.3s ease;
-    /* Добавляем плавный переход */
-}
-
 @media screen and (max-width: 480px) {
     .product-card__button {
         font-size: 14px;
@@ -2283,6 +2328,7 @@ html {
     0% {
         opacity: 0.9;
     }
+
     100% {
         opacity: 1;
     }
@@ -2510,5 +2556,238 @@ html {
 @media screen and (max-width: 480px) {
     .value-description {
         font-size: 0.8rem;
+    }
+}
+
+
+/* Основной стиль кнопки */
+
+.star-button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    animation: pulse 2.5s infinite;
+}
+
+
+/* Контент кнопки */
+
+.star-button .button-content {
+    position: relative;
+    background: linear-gradient(to bottom, #060606, #111);
+    border: 1px solid #333;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: 50px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Анимация движущихся границ */
+
+.star-button::before,
+.star-button::after {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 50%;
+    opacity: 0.6;
+    border-radius: 50%;
+    animation: star-movement 4s linear infinite alternate;
+    z-index: 0;
+}
+
+.star-button::before {
+    background: radial-gradient(circle, #ffea00, transparent 10%);
+    top: -10px;
+    left: -250%;
+}
+
+.star-button::after {
+    background: radial-gradient(circle, #ffea00, transparent 10%);
+    bottom: -11px;
+    right: -250%;
+}
+
+
+/* Эффект при наведении */
+
+.star-button:hover .button-content {
+    background: linear-gradient(to bottom, #ffc107, #ff5722);
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+}
+
+.star-button:hover::before,
+.star-button:hover::after {
+    opacity: 0.8;
+    animation-duration: 2s;
+}
+
+
+/* Пульсация кнопки */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255, 234, 0, 0);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
+    }
+}
+
+
+/* Движение звезд */
+
+@keyframes star-movement {
+    0% {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(100%, 0%);
+        opacity: 0;
+    }
+}
+
+
+/* Адаптивность для мобильных устройств */
+
+@media (max-width: 768px) {
+    .star-button .button-content {
+        font-size: 14px;
+        padding: 12px 20px;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-button .button-content {
+        font-size: 12px;
+        padding: 10px 16px;
+        gap: 4px;
+    }
+
+    .star-button {
+        border-radius: 30px;
+    }
+}
+
+
+/* Основной стиль кнопки */
+
+.star-button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    /* Чёрный текст */
+    background: #ffc107;
+    /* Жёлтый фон */
+    transition: all 0.3s ease;
+    animation: pulse 2.5s infinite;
+}
+
+
+/* Контент кнопки */
+
+.star-button .button-content {
+    position: relative;
+    background: transparent;
+    /* Прозрачный фон для внутреннего блока */
+    border: 2px solid #000;
+    /* Чёрная граница */
+    color: #000;
+    /* Чёрный текст */
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: 50px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Эффект при наведении */
+
+.star-button:hover {
+    background: #ffea00;
+    /* Более яркий жёлтый */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    /* Чёрная тень */
+}
+
+.star-button:hover .button-content {
+    transform: translateY(-4px) scale(1.05);
+    /* Подъём и увеличение */
+}
+
+
+/* Адаптивность для мобильных устройств */
+
+@media (max-width: 768px) {
+    .star-button .button-content {
+        font-size: 14px;
+        padding: 12px 20px;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-button .button-content {
+        font-size: 12px;
+        padding: 10px 16px;
+        gap: 4px;
+    }
+
+    .star-button {
+        border-radius: 30px;
+    }
+}
+
+
+/* Пульсация кнопки */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 10px rgba(255, 202, 40, 0.5);
+        /* Жёлтая подсветка */
     }
 }
