@@ -793,7 +793,7 @@ main {
     .menu {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 80px;
         left: 0;
         width: 100%;
         background-color: var(--text-color);
@@ -803,6 +803,19 @@ main {
         transform-origin: top;
         transition: transform 0.3s ease;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @media screen and (max-width: 480px) {
+        .menu {
+            top: 60px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle {
+            font-size: 20px;
+        }
+
     }
 
     .menu.active {
@@ -1702,7 +1715,6 @@ logo-placeholder .about-us {
         gap: 12px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding: 14px;
         -webkit-overflow-scrolling: touch;
     }
 }
@@ -1723,9 +1735,9 @@ logo-placeholder .about-us {
 @media screen and (max-width: 480px) {
     .category {
         flex: 0 0 auto;
-        width: 60px;
-        min-width: 60px;
-        padding: 8px;
+        width: 65px;
+        min-width: 65px;
+        padding: 10px;
         text-align: center;
         border-radius: 16px;
         background-color: #fff;
@@ -1734,7 +1746,8 @@ logo-placeholder .about-us {
     }
 }
 
-.category:hover {
+
+*/ .category:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transform: translateY(-6px);
     /* 🔶 Поднимаем карточку */
@@ -2790,4 +2803,40 @@ html {
         box-shadow: 0 0 10px rgba(255, 202, 40, 0.5);
         /* Жёлтая подсветка */
     }
+}
+
+
+.reviews {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.review {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.review-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.rating {
+    color: #FFB800;
+    font-weight: bold;
 }

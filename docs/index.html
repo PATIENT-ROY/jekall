@@ -37,7 +37,7 @@
             <div class="logo">
                 <a href="#" onclick="window.location.reload(); return false;">
                     <img src="images/favicon/favicon.svg" alt="Ets Jekall" width="80px" height="80px" onload="this.classList.add('loaded')" class="logo_image">
-                    <div class="logo-placeholder"></div>
+                    <div class="logo-placeholder" data-src="real-image.jpg" loading="lazy"></div>
                     <h1 class="logo_title">Jekall Mobiles</h1>
                 </a>
             </div>
@@ -261,6 +261,52 @@
                         <p class="value-description">Notre équipe qualifiée met tout en œuvre pour répondre à vos attentes avec expertise.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="reviews" itemscope itemtype="https://schema.org/Product">
+            <h2>Avis sur <span itemprop="name">Jekall Mobiles</span></h2>
+            
+            <div class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <img src="images/avatars/user1.jpg" alt="Photo de l'acheteur" itemprop="author">
+                    <div>
+                        <h3 itemprop="author">Didier M.</h3>
+                        <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            ★★★★☆ <meta itemprop="ratingValue" content="4"> (4/5)
+                        </div>
+                    </div>
+                </div>
+                <p itemprop="reviewBody">"Excellent service ! iPhone 15 Pro livré en 2 jours, original avec garantie."</p>
+                <time itemprop="datePublished" datetime="2024-06-15">15 juin 2024</time>
+            </div>
+            
+            <div class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">     
+                    <img src="images/avatars/user2.jpg" alt="Photo de l'acheteur" itemprop="author">
+                    <div>
+                        <h3 itemprop="author">Paul M.</h3>
+                        <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            ★★★★★ <meta itemprop="ratingValue" content="5"> (5/5)
+                        </div>
+                    </div>
+                </div>
+                <p itemprop="reviewBody">"Excellent service ! iPhone 15 Pro livré en 2 jours, original avec garantie. Je recommande !"</p>
+                <time itemprop="datePublished" datetime="2024-06-16">16 juin 2024</time>
+            </div>
+
+            <div class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <img src="images/avatars/user3.jpg" alt="Photo de l'acheteur" itemprop="author">
+                    <div>
+                        <h3 itemprop="author">Marie L.</h3>
+                        <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            ★★★★★ <meta itemprop="ratingValue" content="5"> (5/5)
+                        </div>
+                    </div>
+                </div>
+                <p itemprop="reviewBody">"Excellent service ! iPhone 15 Pro livré en 2 jours, original avec garantie. Je recommande !"</p>
+                <time itemprop="datePublished" datetime="2024-06-17">17 juin 2024</time>
             </div>
         </section>
 

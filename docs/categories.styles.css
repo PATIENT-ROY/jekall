@@ -22,6 +22,7 @@
     0% {
         border-color: #FFC000;
     }
+
     100% {
         border-color: transparent;
     }
@@ -48,9 +49,11 @@
         padding: 32px 16px 16px;
         text-align: center;
     }
+
     .catalogue-intro h1 {
         font-size: 30px;
     }
+
     .catalogue-intro p {
         font-size: 16px;
         max-width: 700px;
@@ -65,9 +68,11 @@
     .catalogue-intro {
         padding: 24px 12px 12px;
     }
+
     .catalogue-intro h1 {
         font-size: 22px;
     }
+
     .catalogue-intro p {
         font-size: 14px;
         line-height: 1.5;
@@ -143,9 +148,11 @@
     0% {
         background-color: #fff9d1;
     }
+
     50% {
         background-color: #fff2a8;
     }
+
     100% {
         background-color: transparent;
     }
@@ -172,11 +179,13 @@
         padding: 16px;
         margin: 16px auto;
     }
+
     .categories-section h2 {
         font-size: 20px;
         font-weight: 500;
         margin-bottom: 16px;
     }
+
     .categories {
         display: flex;
         flex-direction: row;
@@ -186,12 +195,15 @@
         padding: 14px;
         -webkit-overflow-scrolling: touch;
     }
+
     .categories::-webkit-scrollbar {
         display: none;
     }
+
     .categories {
         scrollbar-width: none;
     }
+
     .category {
         flex: 0 0 auto;
         width: 70px;
@@ -203,18 +215,21 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         scroll-snap-align: start;
     }
+
     .category img {
         width: 48px;
         height: 48px;
         object-fit: contain;
         margin-bottom: 8px;
     }
+
     .category p {
         font-size: 12px;
         font-weight: 500;
         margin: 0;
         color: #000;
     }
+
     .category.active {
         background-color: #fff88a;
         border: 2px solid #ffc000;
@@ -223,14 +238,16 @@
 
 @media screen and (max-width: 480px) {
     .category {
-        width: 60px;
-        min-width: 60px;
-        padding: 8px;
+        width: 80px;
+        min-width: 80px;
+        padding: 10px;
     }
+
     .category img {
         width: 36px;
         height: 36px;
     }
+
     .category p {
         font-size: 8px;
     }
